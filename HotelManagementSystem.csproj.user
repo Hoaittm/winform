@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="add_access.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="add_employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="add_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AdminMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Bill_manage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="booking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="booking_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="change_room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Checkin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Checkin_details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CusButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="customer_manage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="employee_customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="PrintBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="regulations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Revenue_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="roomType_manage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="room_manage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="service_manage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
