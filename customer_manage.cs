@@ -219,36 +219,8 @@ namespace HotelManagementSystem
                 return;
             }
 
-            // Kiểm tra CCCD
-            if (!IsValidCccd(customerCccd))
-            {
-                MessageBox.Show("Số CCCD phải có 12 chữ số và không được chứa ký tự khác.");
-                return;
-            }
-
-            // Kiểm tra số điện thoại
-            if (!IsValidPhone(customerPhone))
-            {
-                MessageBox.Show("Số điện thoại phải có 10 chữ số.");
-                return;
-            }
-
-            // Chuyển đổi sang int và đảm bảo kiểm tra
-            int customerCccdValue;
-            int customerPhoneValue;
-
-            if (!int.TryParse(customerCccd, out customerCccdValue))
-            {
-                MessageBox.Show("Không thể chuyển đổi CCCD thành số. Vui lòng kiểm tra lại.");
-                return;
-            }
-
-            if (!int.TryParse(customerPhone, out customerPhoneValue))
-            {
-                MessageBox.Show("Không thể chuyển đổi số điện thoại thành số. Vui lòng kiểm tra lại.");
-                return;
-            }
-
+          
+         
             // Cập nhật thông tin khách hàng trong cơ sở dữ liệu
             string query = "UPDATE customer SET name = @name, dob = @dob, cccd = @cccd, address = @address, type = @type, phone = @phone, gender = @gender, country = @country WHERE id = @id";
 
@@ -263,10 +235,10 @@ namespace HotelManagementSystem
                         command.Parameters.AddWithValue("@id", customerId);
                         command.Parameters.AddWithValue("@name", customerName);
                         command.Parameters.AddWithValue("@dob", customerDob);
-                        command.Parameters.AddWithValue("@cccd", customerCccdValue);
+                        command.Parameters.AddWithValue("@cccd", customerCccd);
                         command.Parameters.AddWithValue("@address", customerAddress);
                         command.Parameters.AddWithValue("@type", customerType);
-                        command.Parameters.AddWithValue("@phone", customerPhoneValue);
+                        command.Parameters.AddWithValue("@phone", customerPhone);
                         command.Parameters.AddWithValue("@gender", customerGender);
                         command.Parameters.AddWithValue("@country", customerCountry);
 
@@ -289,18 +261,7 @@ namespace HotelManagementSystem
                 }
             }
         }
-        private bool IsValidCccd(string cccd)
-        {
-            // Kiểm tra nếu độ dài là 12 và chỉ chứa ký tự số
-            return cccd.Length == 12 && cccd.All(char.IsDigit);
-        }
-
-        // Phương thức kiểm tra tính hợp lệ của số điện thoại
-        private bool IsValidPhone(string phone)
-        {
-            // Kiểm tra nếu độ dài là 10 và chỉ chứa ký tự số
-            return phone.Length == 10 && phone.All(char.IsDigit);
-        }
+       
         private void txt_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
