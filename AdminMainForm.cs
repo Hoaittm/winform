@@ -7,20 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace HotelManagementSystem
 {
     public partial class AdminMainForm : Form
     {
-        public AdminMainForm()
+        private int employeeId;
+        public AdminMainForm(int employeeId)
         {
             InitializeComponent();
             //addRoom.Click += addRoom_Click;
-
+            this.employeeId = employeeId;
 
         }
+        public static int CurrentEmployeeId { get; private set; }
 
-        private void add_room_Paint(object sender, PaintEventArgs e)
+    private void add_room_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -94,9 +97,10 @@ namespace HotelManagementSystem
 
         private void information_Click(object sender, EventArgs e)
         {
-            Information information = new Information();
+
+           /* MessageBox.Show("Employee ID: " + employeeId);*/ // Hiển thị giá trị ID
+            Information information = new Information(employeeId);
             information.Show();
-            
         }
 
         private void logout_Click(object sender, EventArgs e)
@@ -105,5 +109,16 @@ namespace HotelManagementSystem
             login.Show();
             this.Hide();
         }
+
+        private void Dashboard_Load_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

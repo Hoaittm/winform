@@ -30,29 +30,25 @@
         {
             label6 = new Label();
             groupBox2 = new GroupBox();
-            textBox2 = new TextBox();
-            cusButton1 = new HotelManage.Assets.CusButton();
+            tenphongtimkiem = new TextBox();
+            timkiemloaiphong = new HotelManage.Assets.CusButton();
             label9 = new Label();
             groupBox1 = new GroupBox();
-            textBox4 = new TextBox();
+            songuoitoida = new TextBox();
             label7 = new Label();
-            textBox3 = new TextBox();
+            giaphong = new TextBox();
             label5 = new Label();
-            textBox1 = new TextBox();
+            tenloaiphong = new TextBox();
             label3 = new Label();
-            comboBox2 = new ComboBox();
+            maloaiphong = new ComboBox();
             label1 = new Label();
             groupBox5 = new GroupBox();
-            cusButton4 = new HotelManage.Assets.CusButton();
+            capnhatphong = new HotelManage.Assets.CusButton();
             cusButton3 = new HotelManage.Assets.CusButton();
             groupBox3 = new GroupBox();
             button1 = new Button();
             dataGridView1 = new DataGridView();
             txt_Exit = new Label();
-            ma = new DataGridViewTextBoxColumn();
-            ten = new DataGridViewTextBoxColumn();
-            songui = new DataGridViewTextBoxColumn();
-            gia = new DataGridViewTextBoxColumn();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox5.SuspendLayout();
@@ -75,8 +71,8 @@
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.ButtonHighlight;
-            groupBox2.Controls.Add(textBox2);
-            groupBox2.Controls.Add(cusButton1);
+            groupBox2.Controls.Add(tenphongtimkiem);
+            groupBox2.Controls.Add(timkiemloaiphong);
             groupBox2.Controls.Add(label9);
             groupBox2.FlatStyle = FlatStyle.Flat;
             groupBox2.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -88,30 +84,31 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Tìm kiếm";
             // 
-            // textBox2
+            // tenphongtimkiem
             // 
-            textBox2.Location = new Point(25, 107);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(406, 46);
-            textBox2.TabIndex = 40;
+            tenphongtimkiem.Location = new Point(25, 107);
+            tenphongtimkiem.Name = "tenphongtimkiem";
+            tenphongtimkiem.Size = new Size(406, 46);
+            tenphongtimkiem.TabIndex = 40;
             // 
-            // cusButton1
+            // timkiemloaiphong
             // 
-            cusButton1.BackColor = SystemColors.ButtonHighlight;
-            cusButton1.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton1.BorderColor = SystemColors.HotTrack;
-            cusButton1.BorderRadius = 35;
-            cusButton1.BorderSize = 1;
-            cusButton1.FlatAppearance.BorderSize = 0;
-            cusButton1.FlatStyle = FlatStyle.Flat;
-            cusButton1.ForeColor = SystemColors.HotTrack;
-            cusButton1.Location = new Point(25, 183);
-            cusButton1.Name = "cusButton1";
-            cusButton1.Size = new Size(411, 74);
-            cusButton1.TabIndex = 39;
-            cusButton1.Text = "Tìm kiếm";
-            cusButton1.TextColor = SystemColors.HotTrack;
-            cusButton1.UseVisualStyleBackColor = false;
+            timkiemloaiphong.BackColor = SystemColors.ButtonHighlight;
+            timkiemloaiphong.BackgroundColor = SystemColors.ButtonHighlight;
+            timkiemloaiphong.BorderColor = SystemColors.HotTrack;
+            timkiemloaiphong.BorderRadius = 35;
+            timkiemloaiphong.BorderSize = 1;
+            timkiemloaiphong.FlatAppearance.BorderSize = 0;
+            timkiemloaiphong.FlatStyle = FlatStyle.Flat;
+            timkiemloaiphong.ForeColor = SystemColors.HotTrack;
+            timkiemloaiphong.Location = new Point(25, 183);
+            timkiemloaiphong.Name = "timkiemloaiphong";
+            timkiemloaiphong.Size = new Size(411, 74);
+            timkiemloaiphong.TabIndex = 39;
+            timkiemloaiphong.Text = "Tìm kiếm";
+            timkiemloaiphong.TextColor = SystemColors.HotTrack;
+            timkiemloaiphong.UseVisualStyleBackColor = false;
+            timkiemloaiphong.Click += timkiemloaiphong_Click;
             // 
             // label9
             // 
@@ -119,20 +116,20 @@
             label9.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.Location = new Point(25, 54);
             label9.Name = "label9";
-            label9.Size = new Size(204, 37);
+            label9.Size = new Size(61, 37);
             label9.TabIndex = 0;
-            label9.Text = "Mã/ Tên phòng:";
+            label9.Text = "Mã:";
             // 
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.ButtonHighlight;
-            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(songuoitoida);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(giaphong);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(tenloaiphong);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(comboBox2);
+            groupBox1.Controls.Add(maloaiphong);
             groupBox1.Controls.Add(label1);
             groupBox1.FlatStyle = FlatStyle.Flat;
             groupBox1.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -144,12 +141,12 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin phòng";
             // 
-            // textBox4
+            // songuoitoida
             // 
-            textBox4.Location = new Point(25, 359);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(406, 46);
-            textBox4.TabIndex = 49;
+            songuoitoida.Location = new Point(25, 359);
+            songuoitoida.Name = "songuoitoida";
+            songuoitoida.Size = new Size(406, 46);
+            songuoitoida.TabIndex = 49;
             // 
             // label7
             // 
@@ -161,12 +158,12 @@
             label7.TabIndex = 48;
             label7.Text = "Số người tối đa:";
             // 
-            // textBox3
+            // giaphong
             // 
-            textBox3.Location = new Point(25, 487);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(406, 46);
-            textBox3.TabIndex = 47;
+            giaphong.Location = new Point(25, 487);
+            giaphong.Name = "giaphong";
+            giaphong.Size = new Size(406, 46);
+            giaphong.TabIndex = 47;
             // 
             // label5
             // 
@@ -178,12 +175,12 @@
             label5.TabIndex = 46;
             label5.Text = "Giá phòng:";
             // 
-            // textBox1
+            // tenloaiphong
             // 
-            textBox1.Location = new Point(25, 231);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(406, 46);
-            textBox1.TabIndex = 43;
+            tenloaiphong.Location = new Point(25, 231);
+            tenloaiphong.Name = "tenloaiphong";
+            tenloaiphong.Size = new Size(406, 46);
+            tenloaiphong.TabIndex = 43;
             // 
             // label3
             // 
@@ -195,14 +192,14 @@
             label3.TabIndex = 42;
             label3.Text = "Tên loại phòng:";
             // 
-            // comboBox2
+            // maloaiphong
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            comboBox2.Location = new Point(25, 107);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(406, 48);
-            comboBox2.TabIndex = 33;
+            maloaiphong.FormattingEnabled = true;
+            maloaiphong.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
+            maloaiphong.Location = new Point(25, 107);
+            maloaiphong.Name = "maloaiphong";
+            maloaiphong.Size = new Size(406, 48);
+            maloaiphong.TabIndex = 33;
             // 
             // label1
             // 
@@ -217,7 +214,7 @@
             // groupBox5
             // 
             groupBox5.BackColor = SystemColors.ButtonHighlight;
-            groupBox5.Controls.Add(cusButton4);
+            groupBox5.Controls.Add(capnhatphong);
             groupBox5.Controls.Add(cusButton3);
             groupBox5.FlatStyle = FlatStyle.Flat;
             groupBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -229,23 +226,24 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Chức năng";
             // 
-            // cusButton4
+            // capnhatphong
             // 
-            cusButton4.BackColor = SystemColors.ButtonHighlight;
-            cusButton4.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton4.BorderColor = SystemColors.HotTrack;
-            cusButton4.BorderRadius = 35;
-            cusButton4.BorderSize = 1;
-            cusButton4.FlatAppearance.BorderSize = 0;
-            cusButton4.FlatStyle = FlatStyle.Flat;
-            cusButton4.ForeColor = SystemColors.HotTrack;
-            cusButton4.Location = new Point(15, 70);
-            cusButton4.Name = "cusButton4";
-            cusButton4.Size = new Size(443, 87);
-            cusButton4.TabIndex = 32;
-            cusButton4.Text = "Cập nhật phòng";
-            cusButton4.TextColor = SystemColors.HotTrack;
-            cusButton4.UseVisualStyleBackColor = false;
+            capnhatphong.BackColor = SystemColors.ButtonHighlight;
+            capnhatphong.BackgroundColor = SystemColors.ButtonHighlight;
+            capnhatphong.BorderColor = SystemColors.HotTrack;
+            capnhatphong.BorderRadius = 35;
+            capnhatphong.BorderSize = 1;
+            capnhatphong.FlatAppearance.BorderSize = 0;
+            capnhatphong.FlatStyle = FlatStyle.Flat;
+            capnhatphong.ForeColor = SystemColors.HotTrack;
+            capnhatphong.Location = new Point(15, 70);
+            capnhatphong.Name = "capnhatphong";
+            capnhatphong.Size = new Size(443, 87);
+            capnhatphong.TabIndex = 32;
+            capnhatphong.Text = "Cập nhật phòng";
+            capnhatphong.TextColor = SystemColors.HotTrack;
+            capnhatphong.UseVisualStyleBackColor = false;
+            capnhatphong.Click += capnhatphong_Click;
             // 
             // cusButton3
             // 
@@ -294,7 +292,6 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ma, ten, songui, gia });
             dataGridView1.Location = new Point(18, 93);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 82;
@@ -312,34 +309,6 @@
             txt_Exit.TabIndex = 39;
             txt_Exit.Text = "X";
             txt_Exit.Click += txt_Exit_Click;
-            // 
-            // ma
-            // 
-            ma.HeaderText = "Mã";
-            ma.MinimumWidth = 10;
-            ma.Name = "ma";
-            ma.Width = 200;
-            // 
-            // ten
-            // 
-            ten.HeaderText = "Tên loại phòng";
-            ten.MinimumWidth = 10;
-            ten.Name = "ten";
-            ten.Width = 400;
-            // 
-            // songui
-            // 
-            songui.HeaderText = "Số người tối đa";
-            songui.MinimumWidth = 10;
-            songui.Name = "songui";
-            songui.Width = 200;
-            // 
-            // gia
-            // 
-            gia.HeaderText = "Giá";
-            gia.MinimumWidth = 10;
-            gia.Name = "gia";
-            gia.Width = 500;
             // 
             // roomType_manage
             // 
@@ -371,28 +340,24 @@
 
         private Label label6;
         private GroupBox groupBox2;
-        private TextBox textBox2;
-        private HotelManage.Assets.CusButton cusButton1;
+        private TextBox tenphongtimkiem;
+        private HotelManage.Assets.CusButton timkiemloaiphong;
         private Label label9;
         private GroupBox groupBox1;
-        private TextBox textBox4;
+        private TextBox songuoitoida;
         private Label label7;
-        private TextBox textBox3;
+        private TextBox giaphong;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox tenloaiphong;
         private Label label3;
-        private ComboBox comboBox2;
+        private ComboBox maloaiphong;
         private Label label1;
         private GroupBox groupBox5;
-        private HotelManage.Assets.CusButton cusButton4;
+        private HotelManage.Assets.CusButton capnhatphong;
         private HotelManage.Assets.CusButton cusButton3;
         private GroupBox groupBox3;
         private Button button1;
         private DataGridView dataGridView1;
         private Label txt_Exit;
-        private DataGridViewTextBoxColumn ma;
-        private DataGridViewTextBoxColumn ten;
-        private DataGridViewTextBoxColumn songui;
-        private DataGridViewTextBoxColumn gia;
     }
 }

@@ -30,10 +30,10 @@
         {
             label6 = new Label();
             groupBox2 = new GroupBox();
-            numericUpDown2 = new NumericUpDown();
+            nam = new NumericUpDown();
             label1 = new Label();
-            cusButton1 = new HotelManage.Assets.CusButton();
-            comboBox1 = new ComboBox();
+            xemketquatimkiem = new HotelManage.Assets.CusButton();
+            thang = new ComboBox();
             label9 = new Label();
             label2 = new Label();
             panel1 = new Panel();
@@ -42,16 +42,15 @@
             button3 = new Button();
             button2 = new Button();
             cusButton2 = new HotelManage.Assets.CusButton();
-            button1 = new Button();
             dataGridView1 = new DataGridView();
             label15 = new Label();
-            ten = new DataGridViewTextBoxColumn();
-            tyle = new DataGridViewTextBoxColumn();
-            doanhthu = new DataGridViewTextBoxColumn();
+            menuStrip1 = new MenuStrip();
+            xuấtFileToolStripMenuItem = new ToolStripMenuItem();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nam).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label6
@@ -69,10 +68,10 @@
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.ButtonHighlight;
-            groupBox2.Controls.Add(numericUpDown2);
+            groupBox2.Controls.Add(nam);
             groupBox2.Controls.Add(label1);
-            groupBox2.Controls.Add(cusButton1);
-            groupBox2.Controls.Add(comboBox1);
+            groupBox2.Controls.Add(xemketquatimkiem);
+            groupBox2.Controls.Add(thang);
             groupBox2.Controls.Add(label9);
             groupBox2.FlatStyle = FlatStyle.Flat;
             groupBox2.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -84,16 +83,17 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Chức năng";
             // 
-            // numericUpDown2
+            // nam
             // 
-            numericUpDown2.Increment = new decimal(new int[] { 2000, 0, 0, 0 });
-            numericUpDown2.Location = new Point(666, 62);
-            numericUpDown2.Maximum = new decimal(new int[] { 2024, 0, 0, 0 });
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(406, 46);
-            numericUpDown2.TabIndex = 41;
-            numericUpDown2.TextAlign = HorizontalAlignment.Center;
-            numericUpDown2.Value = new decimal(new int[] { 2024, 0, 0, 0 });
+            nam.Increment = new decimal(new int[] { 2000, 0, 0, 0 });
+            nam.Location = new Point(666, 62);
+            nam.Maximum = new decimal(new int[] { 2024, 0, 0, 0 });
+            nam.Name = "nam";
+            nam.Size = new Size(406, 46);
+            nam.TabIndex = 41;
+            nam.TextAlign = HorizontalAlignment.Center;
+            nam.Value = new decimal(new int[] { 2024, 0, 0, 0 });
+            nam.ValueChanged += nam_ValueChanged;
             // 
             // label1
             // 
@@ -105,32 +105,34 @@
             label1.TabIndex = 40;
             label1.Text = "Năm:";
             // 
-            // cusButton1
+            // xemketquatimkiem
             // 
-            cusButton1.BackColor = SystemColors.ButtonHighlight;
-            cusButton1.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton1.BorderColor = SystemColors.HotTrack;
-            cusButton1.BorderRadius = 35;
-            cusButton1.BorderSize = 1;
-            cusButton1.FlatAppearance.BorderSize = 0;
-            cusButton1.FlatStyle = FlatStyle.Flat;
-            cusButton1.ForeColor = SystemColors.HotTrack;
-            cusButton1.Location = new Point(1222, 43);
-            cusButton1.Name = "cusButton1";
-            cusButton1.Size = new Size(486, 74);
-            cusButton1.TabIndex = 39;
-            cusButton1.Text = "Xem kết quả";
-            cusButton1.TextColor = SystemColors.HotTrack;
-            cusButton1.UseVisualStyleBackColor = false;
+            xemketquatimkiem.BackColor = SystemColors.ButtonHighlight;
+            xemketquatimkiem.BackgroundColor = SystemColors.ButtonHighlight;
+            xemketquatimkiem.BorderColor = SystemColors.HotTrack;
+            xemketquatimkiem.BorderRadius = 35;
+            xemketquatimkiem.BorderSize = 1;
+            xemketquatimkiem.FlatAppearance.BorderSize = 0;
+            xemketquatimkiem.FlatStyle = FlatStyle.Flat;
+            xemketquatimkiem.ForeColor = SystemColors.HotTrack;
+            xemketquatimkiem.Location = new Point(1222, 43);
+            xemketquatimkiem.Name = "xemketquatimkiem";
+            xemketquatimkiem.Size = new Size(486, 74);
+            xemketquatimkiem.TabIndex = 39;
+            xemketquatimkiem.Text = "Xem kết quả";
+            xemketquatimkiem.TextColor = SystemColors.HotTrack;
+            xemketquatimkiem.UseVisualStyleBackColor = false;
+            xemketquatimkiem.Click += xemketquatimkiem_Click;
             // 
-            // comboBox1
+            // thang
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            comboBox1.Location = new Point(119, 62);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(406, 48);
-            comboBox1.TabIndex = 33;
+            thang.FormattingEnabled = true;
+            thang.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
+            thang.Location = new Point(119, 62);
+            thang.Name = "thang";
+            thang.Size = new Size(406, 48);
+            thang.TabIndex = 33;
+            thang.SelectedIndexChanged += thang_SelectedIndexChanged;
             // 
             // label9
             // 
@@ -160,9 +162,9 @@
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(cusButton2);
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(label2);
+            panel1.Controls.Add(menuStrip1);
             panel1.ForeColor = SystemColors.HotTrack;
             panel1.Location = new Point(12, 281);
             panel1.Name = "panel1";
@@ -224,20 +226,10 @@
             cusButton2.UseVisualStyleBackColor = false;
             cusButton2.Click += cusButton2_Click;
             // 
-            // button1
-            // 
-            button1.Location = new Point(1619, 14);
-            button1.Name = "button1";
-            button1.Size = new Size(150, 46);
-            button1.TabIndex = 43;
-            button1.Text = "Xuất";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ten, tyle, doanhthu });
             dataGridView1.Location = new Point(666, 81);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 82;
@@ -256,26 +248,24 @@
             label15.Text = "X";
             label15.Click += label15_Click;
             // 
-            // ten
+            // menuStrip1
             // 
-            ten.HeaderText = "Tên loại phòng";
-            ten.MinimumWidth = 10;
-            ten.Name = "ten";
-            ten.Width = 350;
+            menuStrip1.BackColor = SystemColors.ControlLightLight;
+            menuStrip1.ImageScalingSize = new Size(32, 32);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { xuấtFileToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1776, 42);
+            menuStrip1.TabIndex = 49;
+            menuStrip1.Text = "menuStrip1";
             // 
-            // tyle
+            // xuấtFileToolStripMenuItem
             // 
-            tyle.HeaderText = "Tỷ lệ";
-            tyle.MinimumWidth = 10;
-            tyle.Name = "tyle";
-            tyle.Width = 200;
-            // 
-            // doanhthu
-            // 
-            doanhthu.HeaderText = "Doanh thu";
-            doanhthu.MinimumWidth = 10;
-            doanhthu.Name = "doanhthu";
-            doanhthu.Width = 600;
+            xuấtFileToolStripMenuItem.BackColor = SystemColors.ActiveCaption;
+            xuấtFileToolStripMenuItem.Name = "xuấtFileToolStripMenuItem";
+            xuấtFileToolStripMenuItem.Size = new Size(122, 38);
+            xuấtFileToolStripMenuItem.Text = "Xuất file";
+            xuấtFileToolStripMenuItem.Click += xuấtFileToolStripMenuItem_Click;
             // 
             // Revenue_report
             // 
@@ -287,14 +277,18 @@
             Controls.Add(groupBox2);
             Controls.Add(label6);
             FormBorderStyle = FormBorderStyle.None;
+            MainMenuStrip = menuStrip1;
             Name = "Revenue_report";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Revenue_report";
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nam).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -304,22 +298,20 @@
         private Label label6;
         private GroupBox groupBox2;
         private Label label1;
-        private HotelManage.Assets.CusButton cusButton1;
-        private ComboBox comboBox1;
+        private HotelManage.Assets.CusButton xemketquatimkiem;
+        private ComboBox thang;
         private Label label9;
-        private NumericUpDown numericUpDown2;
+        private NumericUpDown nam;
         private Label label2;
         private Panel panel1;
         private Button button2;
         private HotelManage.Assets.CusButton cusButton2;
-        private Button button1;
         private DataGridView dataGridView1;
         private Button button5;
         private Button button4;
         private Button button3;
         private Label label15;
-        private DataGridViewTextBoxColumn ten;
-        private DataGridViewTextBoxColumn tyle;
-        private DataGridViewTextBoxColumn doanhthu;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem xuấtFileToolStripMenuItem;
     }
 }

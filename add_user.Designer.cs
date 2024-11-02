@@ -245,6 +245,7 @@
             name.Name = "name";
             name.Size = new Size(358, 47);
             name.TabIndex = 7;
+            name.TextChanged += name_TextChanged;
             // 
             // groupBox2
             // 

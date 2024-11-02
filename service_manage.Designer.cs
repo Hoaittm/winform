@@ -30,36 +30,33 @@
         {
             label6 = new Label();
             groupBox2 = new GroupBox();
-            textBox2 = new TextBox();
-            cusButton1 = new HotelManage.Assets.CusButton();
+            tendichvutimkiem = new TextBox();
+            timkiemdichvu = new HotelManage.Assets.CusButton();
             label9 = new Label();
             groupBox1 = new GroupBox();
-            comboBox3 = new ComboBox();
+            loaidichvu = new ComboBox();
             label7 = new Label();
-            textBox3 = new TextBox();
+            giadichvu = new TextBox();
             label5 = new Label();
-            textBox1 = new TextBox();
+            tendichvu = new TextBox();
             label3 = new Label();
-            comboBox2 = new ComboBox();
+            madichvu = new ComboBox();
             label1 = new Label();
             groupBox3 = new GroupBox();
             cusButton5 = new HotelManage.Assets.CusButton();
-            cusButton4 = new HotelManage.Assets.CusButton();
-            cusButton3 = new HotelManage.Assets.CusButton();
-            cusButton2 = new HotelManage.Assets.CusButton();
+            capnhatdichvu = new HotelManage.Assets.CusButton();
+            themdichvu = new HotelManage.Assets.CusButton();
             groupBox4 = new GroupBox();
             dataGridView1 = new DataGridView();
-            button1 = new Button();
             label15 = new Label();
-            Ma = new DataGridViewTextBoxColumn();
-            Ten = new DataGridViewTextBoxColumn();
-            Gia = new DataGridViewTextBoxColumn();
-            loaidichvu = new DataGridViewTextBoxColumn();
+            menuStrip1 = new MenuStrip();
+            xuấtFileToolStripMenuItem = new ToolStripMenuItem();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label6
@@ -77,8 +74,8 @@
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.ButtonHighlight;
-            groupBox2.Controls.Add(textBox2);
-            groupBox2.Controls.Add(cusButton1);
+            groupBox2.Controls.Add(tendichvutimkiem);
+            groupBox2.Controls.Add(timkiemdichvu);
             groupBox2.Controls.Add(label9);
             groupBox2.FlatStyle = FlatStyle.Flat;
             groupBox2.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -90,30 +87,31 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Tìm kiếm";
             // 
-            // textBox2
+            // tendichvutimkiem
             // 
-            textBox2.Location = new Point(31, 106);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(400, 46);
-            textBox2.TabIndex = 40;
+            tendichvutimkiem.Location = new Point(31, 106);
+            tendichvutimkiem.Name = "tendichvutimkiem";
+            tendichvutimkiem.Size = new Size(400, 46);
+            tendichvutimkiem.TabIndex = 40;
             // 
-            // cusButton1
+            // timkiemdichvu
             // 
-            cusButton1.BackColor = SystemColors.ButtonHighlight;
-            cusButton1.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton1.BorderColor = SystemColors.HotTrack;
-            cusButton1.BorderRadius = 35;
-            cusButton1.BorderSize = 1;
-            cusButton1.FlatAppearance.BorderSize = 0;
-            cusButton1.FlatStyle = FlatStyle.Flat;
-            cusButton1.ForeColor = SystemColors.HotTrack;
-            cusButton1.Location = new Point(539, 90);
-            cusButton1.Name = "cusButton1";
-            cusButton1.Size = new Size(402, 62);
-            cusButton1.TabIndex = 39;
-            cusButton1.Text = "Tìm kiếm";
-            cusButton1.TextColor = SystemColors.HotTrack;
-            cusButton1.UseVisualStyleBackColor = false;
+            timkiemdichvu.BackColor = SystemColors.ButtonHighlight;
+            timkiemdichvu.BackgroundColor = SystemColors.ButtonHighlight;
+            timkiemdichvu.BorderColor = SystemColors.HotTrack;
+            timkiemdichvu.BorderRadius = 35;
+            timkiemdichvu.BorderSize = 1;
+            timkiemdichvu.FlatAppearance.BorderSize = 0;
+            timkiemdichvu.FlatStyle = FlatStyle.Flat;
+            timkiemdichvu.ForeColor = SystemColors.HotTrack;
+            timkiemdichvu.Location = new Point(539, 90);
+            timkiemdichvu.Name = "timkiemdichvu";
+            timkiemdichvu.Size = new Size(402, 62);
+            timkiemdichvu.TabIndex = 39;
+            timkiemdichvu.Text = "Tìm kiếm";
+            timkiemdichvu.TextColor = SystemColors.HotTrack;
+            timkiemdichvu.UseVisualStyleBackColor = false;
+            timkiemdichvu.Click += timkiemdichvu_Click;
             // 
             // label9
             // 
@@ -121,20 +119,20 @@
             label9.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.Location = new Point(31, 54);
             label9.Name = "label9";
-            label9.Size = new Size(204, 37);
+            label9.Size = new Size(155, 37);
             label9.TabIndex = 0;
-            label9.Text = "Mã/Tên dịch vụ:";
+            label9.Text = "Tên dịch vụ:";
             // 
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.ButtonHighlight;
-            groupBox1.Controls.Add(comboBox3);
+            groupBox1.Controls.Add(loaidichvu);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(giadichvu);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(tendichvu);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(comboBox2);
+            groupBox1.Controls.Add(madichvu);
             groupBox1.Controls.Add(label1);
             groupBox1.FlatStyle = FlatStyle.Flat;
             groupBox1.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -146,14 +144,14 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin dịch vụ";
             // 
-            // comboBox3
+            // loaidichvu
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            comboBox3.Location = new Point(25, 359);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(406, 48);
-            comboBox3.TabIndex = 49;
+            loaidichvu.FormattingEnabled = true;
+            loaidichvu.Items.AddRange(new object[] { "Giải trí", "Tiện ích", "Ăn uống" });
+            loaidichvu.Location = new Point(25, 359);
+            loaidichvu.Name = "loaidichvu";
+            loaidichvu.Size = new Size(406, 48);
+            loaidichvu.TabIndex = 49;
             // 
             // label7
             // 
@@ -165,12 +163,12 @@
             label7.TabIndex = 48;
             label7.Text = "Loại dịch vụ:";
             // 
-            // textBox3
+            // giadichvu
             // 
-            textBox3.Location = new Point(25, 487);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(406, 46);
-            textBox3.TabIndex = 47;
+            giadichvu.Location = new Point(25, 487);
+            giadichvu.Name = "giadichvu";
+            giadichvu.Size = new Size(406, 46);
+            giadichvu.TabIndex = 47;
             // 
             // label5
             // 
@@ -182,12 +180,12 @@
             label5.TabIndex = 46;
             label5.Text = "Giá:";
             // 
-            // textBox1
+            // tendichvu
             // 
-            textBox1.Location = new Point(25, 231);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(406, 46);
-            textBox1.TabIndex = 43;
+            tendichvu.Location = new Point(25, 231);
+            tendichvu.Name = "tendichvu";
+            tendichvu.Size = new Size(406, 46);
+            tendichvu.TabIndex = 43;
             // 
             // label3
             // 
@@ -199,14 +197,14 @@
             label3.TabIndex = 42;
             label3.Text = "Tên dịch vụ:";
             // 
-            // comboBox2
+            // madichvu
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            comboBox2.Location = new Point(25, 107);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(406, 48);
-            comboBox2.TabIndex = 33;
+            madichvu.FormattingEnabled = true;
+            madichvu.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
+            madichvu.Location = new Point(25, 107);
+            madichvu.Name = "madichvu";
+            madichvu.Size = new Size(406, 48);
+            madichvu.TabIndex = 33;
             // 
             // label1
             // 
@@ -222,9 +220,8 @@
             // 
             groupBox3.BackColor = SystemColors.ButtonHighlight;
             groupBox3.Controls.Add(cusButton5);
-            groupBox3.Controls.Add(cusButton4);
-            groupBox3.Controls.Add(cusButton3);
-            groupBox3.Controls.Add(cusButton2);
+            groupBox3.Controls.Add(capnhatdichvu);
+            groupBox3.Controls.Add(themdichvu);
             groupBox3.FlatStyle = FlatStyle.Flat;
             groupBox3.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox3.ForeColor = SystemColors.HotTrack;
@@ -245,80 +242,64 @@
             cusButton5.FlatAppearance.BorderSize = 0;
             cusButton5.FlatStyle = FlatStyle.Flat;
             cusButton5.ForeColor = SystemColors.HotTrack;
-            cusButton5.Location = new Point(44, 471);
+            cusButton5.Location = new Point(44, 434);
             cusButton5.Name = "cusButton5";
-            cusButton5.Size = new Size(402, 62);
+            cusButton5.Size = new Size(402, 99);
             cusButton5.TabIndex = 43;
             cusButton5.Text = "Đóng";
             cusButton5.TextColor = SystemColors.HotTrack;
             cusButton5.UseVisualStyleBackColor = false;
             cusButton5.Click += cusButton5_Click;
             // 
-            // cusButton4
+            // capnhatdichvu
             // 
-            cusButton4.BackColor = SystemColors.ButtonHighlight;
-            cusButton4.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton4.BorderColor = SystemColors.HotTrack;
-            cusButton4.BorderRadius = 35;
-            cusButton4.BorderSize = 1;
-            cusButton4.FlatAppearance.BorderSize = 0;
-            cusButton4.FlatStyle = FlatStyle.Flat;
-            cusButton4.ForeColor = SystemColors.HotTrack;
-            cusButton4.Location = new Point(44, 345);
-            cusButton4.Name = "cusButton4";
-            cusButton4.Size = new Size(402, 62);
-            cusButton4.TabIndex = 42;
-            cusButton4.Text = "Sửa loại dịch vụ";
-            cusButton4.TextColor = SystemColors.HotTrack;
-            cusButton4.UseVisualStyleBackColor = false;
+            capnhatdichvu.BackColor = SystemColors.ButtonHighlight;
+            capnhatdichvu.BackgroundColor = SystemColors.ButtonHighlight;
+            capnhatdichvu.BorderColor = SystemColors.HotTrack;
+            capnhatdichvu.BorderRadius = 35;
+            capnhatdichvu.BorderSize = 1;
+            capnhatdichvu.FlatAppearance.BorderSize = 0;
+            capnhatdichvu.FlatStyle = FlatStyle.Flat;
+            capnhatdichvu.ForeColor = SystemColors.HotTrack;
+            capnhatdichvu.Location = new Point(44, 251);
+            capnhatdichvu.Name = "capnhatdichvu";
+            capnhatdichvu.Size = new Size(402, 109);
+            capnhatdichvu.TabIndex = 41;
+            capnhatdichvu.Text = "Cập nhật";
+            capnhatdichvu.TextColor = SystemColors.HotTrack;
+            capnhatdichvu.UseVisualStyleBackColor = false;
+            capnhatdichvu.Click += capnhatdichvu_Click;
             // 
-            // cusButton3
+            // themdichvu
             // 
-            cusButton3.BackColor = SystemColors.ButtonHighlight;
-            cusButton3.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton3.BorderColor = SystemColors.HotTrack;
-            cusButton3.BorderRadius = 35;
-            cusButton3.BorderSize = 1;
-            cusButton3.FlatAppearance.BorderSize = 0;
-            cusButton3.FlatStyle = FlatStyle.Flat;
-            cusButton3.ForeColor = SystemColors.HotTrack;
-            cusButton3.Location = new Point(44, 215);
-            cusButton3.Name = "cusButton3";
-            cusButton3.Size = new Size(402, 62);
-            cusButton3.TabIndex = 41;
-            cusButton3.Text = "Cập nhật";
-            cusButton3.TextColor = SystemColors.HotTrack;
-            cusButton3.UseVisualStyleBackColor = false;
-            // 
-            // cusButton2
-            // 
-            cusButton2.BackColor = SystemColors.ButtonHighlight;
-            cusButton2.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton2.BorderColor = SystemColors.HotTrack;
-            cusButton2.BorderRadius = 35;
-            cusButton2.BorderSize = 1;
-            cusButton2.FlatAppearance.BorderSize = 0;
-            cusButton2.FlatStyle = FlatStyle.Flat;
-            cusButton2.ForeColor = SystemColors.HotTrack;
-            cusButton2.Location = new Point(44, 99);
-            cusButton2.Name = "cusButton2";
-            cusButton2.Size = new Size(402, 62);
-            cusButton2.TabIndex = 40;
-            cusButton2.Text = "Thêm";
-            cusButton2.TextColor = SystemColors.HotTrack;
-            cusButton2.UseVisualStyleBackColor = false;
+            themdichvu.BackColor = SystemColors.ButtonHighlight;
+            themdichvu.BackgroundColor = SystemColors.ButtonHighlight;
+            themdichvu.BorderColor = SystemColors.HotTrack;
+            themdichvu.BorderRadius = 35;
+            themdichvu.BorderSize = 1;
+            themdichvu.FlatAppearance.BorderSize = 0;
+            themdichvu.FlatStyle = FlatStyle.Flat;
+            themdichvu.ForeColor = SystemColors.HotTrack;
+            themdichvu.Location = new Point(44, 83);
+            themdichvu.Name = "themdichvu";
+            themdichvu.Size = new Size(402, 107);
+            themdichvu.TabIndex = 40;
+            themdichvu.Text = "Thêm";
+            themdichvu.TextColor = SystemColors.HotTrack;
+            themdichvu.UseVisualStyleBackColor = false;
+            themdichvu.Click += themdichvu_Click;
             // 
             // groupBox4
             // 
             groupBox4.BackColor = SystemColors.ButtonHighlight;
             groupBox4.Controls.Add(dataGridView1);
-            groupBox4.Controls.Add(button1);
+            groupBox4.Controls.Add(menuStrip1);
             groupBox4.FlatStyle = FlatStyle.Flat;
             groupBox4.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox4.ForeColor = SystemColors.HotTrack;
             groupBox4.Location = new Point(1011, 104);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(1183, 796);
+            groupBox4.Size = new Size(987, 796);
             groupBox4.TabIndex = 51;
             groupBox4.TabStop = false;
             groupBox4.Text = "Danh sách dịch vụ";
@@ -327,67 +308,48 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Ma, Ten, Gia, loaidichvu });
             dataGridView1.Location = new Point(19, 90);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 82;
-            dataGridView1.Size = new Size(1142, 676);
+            dataGridView1.Size = new Size(952, 676);
             dataGridView1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(1011, 36);
-            button1.Name = "button1";
-            button1.Size = new Size(150, 46);
-            button1.TabIndex = 0;
-            button1.Text = "Xuất";
-            button1.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label15.ForeColor = Color.Red;
-            label15.Location = new Point(2156, 9);
+            label15.Location = new Point(1960, 21);
             label15.Name = "label15";
             label15.Size = new Size(38, 41);
             label15.TabIndex = 41;
             label15.Text = "X";
             label15.Click += label15_Click;
             // 
-            // Ma
+            // menuStrip1
             // 
-            Ma.HeaderText = "Mã";
-            Ma.MinimumWidth = 10;
-            Ma.Name = "Ma";
-            Ma.Width = 200;
+            menuStrip1.BackColor = SystemColors.ControlLightLight;
+            menuStrip1.ImageScalingSize = new Size(32, 32);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { xuấtFileToolStripMenuItem });
+            menuStrip1.Location = new Point(3, 42);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(981, 42);
+            menuStrip1.TabIndex = 2;
+            menuStrip1.Text = "menuStrip1";
             // 
-            // Ten
+            // xuấtFileToolStripMenuItem
             // 
-            Ten.HeaderText = "Tên";
-            Ten.MinimumWidth = 10;
-            Ten.Name = "Ten";
-            Ten.Width = 400;
-            // 
-            // Gia
-            // 
-            Gia.HeaderText = "Giá";
-            Gia.MinimumWidth = 10;
-            Gia.Name = "Gia";
-            Gia.Width = 200;
-            // 
-            // loaidichvu
-            // 
-            loaidichvu.HeaderText = "Loại dịch vụ";
-            loaidichvu.MinimumWidth = 10;
-            loaidichvu.Name = "loaidichvu";
-            loaidichvu.Width = 300;
+            xuấtFileToolStripMenuItem.BackColor = SystemColors.ActiveCaption;
+            xuấtFileToolStripMenuItem.Name = "xuấtFileToolStripMenuItem";
+            xuấtFileToolStripMenuItem.Size = new Size(122, 38);
+            xuấtFileToolStripMenuItem.Text = "Xuất file";
+            xuấtFileToolStripMenuItem.Click += xuấtFileToolStripMenuItem_Click;
             // 
             // service_manage
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2206, 912);
+            ClientSize = new Size(2009, 912);
             Controls.Add(label15);
             Controls.Add(groupBox4);
             Controls.Add(groupBox3);
@@ -395,6 +357,7 @@
             Controls.Add(groupBox2);
             Controls.Add(label6);
             FormBorderStyle = FormBorderStyle.None;
+            MainMenuStrip = menuStrip1;
             Name = "service_manage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "service_manage";
@@ -405,7 +368,10 @@
             groupBox1.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -414,30 +380,27 @@
 
         private Label label6;
         private GroupBox groupBox2;
-        private TextBox textBox2;
-        private HotelManage.Assets.CusButton cusButton1;
+        private TextBox tendichvutimkiem;
+        private HotelManage.Assets.CusButton timkiemdichvu;
         private Label label9;
         private GroupBox groupBox1;
-        private TextBox textBox3;
+        private TextBox giadichvu;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox tendichvu;
         private Label label3;
-        private ComboBox comboBox2;
+        private ComboBox madichvu;
         private Label label1;
         private GroupBox groupBox3;
-        private ComboBox comboBox3;
+        private ComboBox loaidichvu;
         private Label label7;
         private HotelManage.Assets.CusButton cusButton5;
         private HotelManage.Assets.CusButton cusButton4;
-        private HotelManage.Assets.CusButton cusButton3;
-        private HotelManage.Assets.CusButton cusButton2;
+        private HotelManage.Assets.CusButton capnhatdichvu;
+        private HotelManage.Assets.CusButton themdichvu;
         private GroupBox groupBox4;
         private DataGridView dataGridView1;
-        private Button button1;
         private Label label15;
-        private DataGridViewTextBoxColumn Ma;
-        private DataGridViewTextBoxColumn Ten;
-        private DataGridViewTextBoxColumn Gia;
-        private DataGridViewTextBoxColumn loaidichvu;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem xuấtFileToolStripMenuItem;
     }
 }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             groupBox1 = new GroupBox();
             txt_phone = new TextBox();
@@ -54,18 +54,22 @@
             name = new TextBox();
             label3 = new Label();
             groupBox3 = new GroupBox();
+            xoakhachhang = new HotelManage.Assets.CusButton();
             txt_Exit = new HotelManage.Assets.CusButton();
             txt_add = new HotelManage.Assets.CusButton();
             txt_update = new HotelManage.Assets.CusButton();
             groupBox4 = new GroupBox();
             dataGridView1 = new DataGridView();
-            button5 = new Button();
+            menuStrip1 = new MenuStrip();
+            xuấtToolStripMenuItem = new ToolStripMenuItem();
             label12 = new Label();
+            printDialog1 = new PrintDialog();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -99,7 +103,7 @@
             txt_phone.Font = new Font("Segoe UI", 11F);
             txt_phone.Location = new Point(318, 50);
             txt_phone.Name = "txt_phone";
-            txt_phone.PlaceholderText = "Số điện thoại";
+            txt_phone.PlaceholderText = "Số cccd";
             txt_phone.Size = new Size(456, 47);
             txt_phone.TabIndex = 4;
             // 
@@ -170,6 +174,7 @@
             phone.Name = "phone";
             phone.Size = new Size(358, 47);
             phone.TabIndex = 22;
+            phone.TextChanged += phone_TextChanged;
             // 
             // dob
             // 
@@ -274,9 +279,9 @@
             label5.Font = new Font("Segoe UI", 11F);
             label5.Location = new Point(15, 359);
             label5.Name = "label5";
-            label5.Size = new Size(156, 41);
+            label5.Size = new Size(143, 41);
             label5.TabIndex = 8;
-            label5.Text = "Số CMND:";
+            label5.Text = "Số CCCD:";
             // 
             // cccd
             // 
@@ -326,6 +331,7 @@
             // groupBox3
             // 
             groupBox3.BackColor = SystemColors.ButtonHighlight;
+            groupBox3.Controls.Add(xoakhachhang);
             groupBox3.Controls.Add(txt_Exit);
             groupBox3.Controls.Add(txt_add);
             groupBox3.Controls.Add(txt_update);
@@ -338,6 +344,25 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Chức năng";
             // 
+            // xoakhachhang
+            // 
+            xoakhachhang.BackColor = SystemColors.ButtonHighlight;
+            xoakhachhang.BackgroundColor = SystemColors.ButtonHighlight;
+            xoakhachhang.BorderColor = SystemColors.HotTrack;
+            xoakhachhang.BorderRadius = 35;
+            xoakhachhang.BorderSize = 1;
+            xoakhachhang.FlatAppearance.BorderSize = 0;
+            xoakhachhang.FlatStyle = FlatStyle.Flat;
+            xoakhachhang.ForeColor = SystemColors.HotTrack;
+            xoakhachhang.Location = new Point(15, 156);
+            xoakhachhang.Name = "xoakhachhang";
+            xoakhachhang.Size = new Size(366, 77);
+            xoakhachhang.TabIndex = 37;
+            xoakhachhang.Text = "Xóa";
+            xoakhachhang.TextColor = SystemColors.HotTrack;
+            xoakhachhang.UseVisualStyleBackColor = false;
+            xoakhachhang.Click += xoakhachhang_Click;
+            // 
             // txt_Exit
             // 
             txt_Exit.BackColor = SystemColors.ButtonHighlight;
@@ -348,7 +373,7 @@
             txt_Exit.FlatAppearance.BorderSize = 0;
             txt_Exit.FlatStyle = FlatStyle.Flat;
             txt_Exit.ForeColor = SystemColors.HotTrack;
-            txt_Exit.Location = new Point(15, 158);
+            txt_Exit.Location = new Point(439, 156);
             txt_Exit.Name = "txt_Exit";
             txt_Exit.Size = new Size(366, 77);
             txt_Exit.TabIndex = 36;
@@ -399,7 +424,7 @@
             // 
             groupBox4.BackColor = SystemColors.ButtonHighlight;
             groupBox4.Controls.Add(dataGridView1);
-            groupBox4.Controls.Add(button5);
+            groupBox4.Controls.Add(menuStrip1);
             groupBox4.Font = new Font("Segoe UI", 12F);
             groupBox4.ForeColor = SystemColors.HotTrack;
             groupBox4.Location = new Point(895, 93);
@@ -413,30 +438,43 @@
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Desktop;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Desktop;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(16, 103);
+            dataGridView1.Location = new Point(16, 128);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.Size = new Size(1486, 727);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // button5
+            // menuStrip1
             // 
-            button5.Location = new Point(1195, 36);
-            button5.Name = "button5";
-            button5.Size = new Size(150, 46);
-            button5.TabIndex = 0;
-            button5.Text = "Xuất";
-            button5.UseVisualStyleBackColor = true;
+            menuStrip1.BackColor = SystemColors.ButtonHighlight;
+            menuStrip1.ImageScalingSize = new Size(32, 32);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { xuấtToolStripMenuItem });
+            menuStrip1.Location = new Point(3, 46);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Padding = new Padding(6, 2, 6, 2);
+            menuStrip1.Size = new Size(1516, 70);
+            menuStrip1.TabIndex = 2;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // xuấtToolStripMenuItem
+            // 
+            xuấtToolStripMenuItem.BackColor = SystemColors.ActiveCaption;
+            xuấtToolStripMenuItem.Font = new Font("Segoe UI Semibold", 10.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            xuấtToolStripMenuItem.Name = "xuấtToolStripMenuItem";
+            xuấtToolStripMenuItem.Padding = new Padding(8, 14, 8, 8);
+            xuấtToolStripMenuItem.Size = new Size(221, 66);
+            xuấtToolStripMenuItem.Text = "Xuất file Excel";
+            xuấtToolStripMenuItem.Click += xuấtToolStripMenuItem_Click;
             // 
             // label12
             // 
@@ -449,6 +487,10 @@
             label12.TabIndex = 7;
             label12.Text = "X";
             label12.Click += label12_Click;
+            // 
+            // printDialog1
+            // 
+            printDialog1.UseEXDialog = true;
             // 
             // customer_manage
             // 
@@ -471,7 +513,10 @@
             groupBox2.PerformLayout();
             groupBox3.ResumeLayout(false);
             groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -505,10 +550,14 @@
         private GroupBox groupBox3;
         private GroupBox groupBox4;
         private DataGridView dataGridView1;
-        private Button button5;
         private Label label12;
         private HotelManage.Assets.CusButton txt_Exit;
         private HotelManage.Assets.CusButton txt_add;
         private HotelManage.Assets.CusButton txt_update;
+        private ToolStripMenuItem xuấtFileToolStripMenuItem;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem xuấtToolStripMenuItem;
+        private PrintDialog printDialog1;
+        private HotelManage.Assets.CusButton xoakhachhang;
     }
 }

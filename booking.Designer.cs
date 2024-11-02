@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             groupBox5 = new GroupBox();
-            txt_Dong = new HotelManage.Assets.CusButton();
-            cusButton3 = new HotelManage.Assets.CusButton();
-            cusButton1 = new HotelManage.Assets.CusButton();
-            checkBox1 = new CheckBox();
+            dongPhong = new HotelManage.Assets.CusButton();
+            txt_Huy = new HotelManage.Assets.CusButton();
+            txt_datphong = new HotelManage.Assets.CusButton();
             groupBox4 = new GroupBox();
             country = new TextBox();
             label14 = new Label();
@@ -72,10 +71,10 @@
             label1 = new Label();
             label6 = new Label();
             groupBox3 = new GroupBox();
-            txt_bookingdetail = new HotelManage.Assets.CusButton();
+            txt_xemchitietdatphong = new HotelManage.Assets.CusButton();
             dataGridView1 = new DataGridView();
             groupBox6 = new GroupBox();
-            btn_search = new HotelManage.Assets.CusButton();
+            timkiemdatphong = new HotelManage.Assets.CusButton();
             txt_cccd = new TextBox();
             label21 = new Label();
             txt_Exit = new Label();
@@ -91,10 +90,9 @@
             // groupBox5
             // 
             groupBox5.BackColor = SystemColors.ButtonHighlight;
-            groupBox5.Controls.Add(txt_Dong);
-            groupBox5.Controls.Add(cusButton3);
-            groupBox5.Controls.Add(cusButton1);
-            groupBox5.Controls.Add(checkBox1);
+            groupBox5.Controls.Add(dongPhong);
+            groupBox5.Controls.Add(txt_Huy);
+            groupBox5.Controls.Add(txt_datphong);
             groupBox5.FlatStyle = FlatStyle.Flat;
             groupBox5.Font = new Font("Segoe UI", 12F, FontStyle.Italic);
             groupBox5.ForeColor = SystemColors.HotTrack;
@@ -105,72 +103,61 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Chức năng";
             // 
-            // txt_Dong
+            // dongPhong
             // 
-            txt_Dong.BackColor = SystemColors.ButtonHighlight;
-            txt_Dong.BackgroundColor = SystemColors.ButtonHighlight;
-            txt_Dong.BorderColor = SystemColors.HotTrack;
-            txt_Dong.BorderRadius = 35;
-            txt_Dong.BorderSize = 1;
-            txt_Dong.FlatAppearance.BorderSize = 0;
-            txt_Dong.FlatStyle = FlatStyle.Flat;
-            txt_Dong.ForeColor = SystemColors.HotTrack;
-            txt_Dong.Location = new Point(30, 459);
-            txt_Dong.Name = "txt_Dong";
-            txt_Dong.Size = new Size(443, 87);
-            txt_Dong.TabIndex = 32;
-            txt_Dong.Text = "Đóng";
-            txt_Dong.TextColor = SystemColors.HotTrack;
-            txt_Dong.UseVisualStyleBackColor = false;
-            txt_Dong.Click += txt_Dong_Click;
+            dongPhong.BackColor = SystemColors.ButtonHighlight;
+            dongPhong.BackgroundColor = SystemColors.ButtonHighlight;
+            dongPhong.BorderColor = SystemColors.HotTrack;
+            dongPhong.BorderRadius = 35;
+            dongPhong.BorderSize = 1;
+            dongPhong.FlatAppearance.BorderSize = 0;
+            dongPhong.FlatStyle = FlatStyle.Flat;
+            dongPhong.ForeColor = SystemColors.HotTrack;
+            dongPhong.Location = new Point(53, 459);
+            dongPhong.Name = "dongPhong";
+            dongPhong.Size = new Size(366, 77);
+            dongPhong.TabIndex = 37;
+            dongPhong.Text = "Đóng";
+            dongPhong.TextColor = SystemColors.HotTrack;
+            dongPhong.UseVisualStyleBackColor = false;
+            dongPhong.Click += dongPhong_Click;
             // 
-            // cusButton3
+            // txt_Huy
             // 
-            cusButton3.BackColor = SystemColors.ButtonHighlight;
-            cusButton3.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton3.BorderColor = SystemColors.HotTrack;
-            cusButton3.BorderRadius = 35;
-            cusButton3.BorderSize = 1;
-            cusButton3.FlatAppearance.BorderSize = 0;
-            cusButton3.FlatStyle = FlatStyle.Flat;
-            cusButton3.ForeColor = SystemColors.HotTrack;
-            cusButton3.Location = new Point(30, 322);
-            cusButton3.Name = "cusButton3";
-            cusButton3.Size = new Size(443, 87);
-            cusButton3.TabIndex = 31;
-            cusButton3.Text = "Hủy";
-            cusButton3.TextColor = SystemColors.HotTrack;
-            cusButton3.UseVisualStyleBackColor = false;
+            txt_Huy.BackColor = SystemColors.ButtonHighlight;
+            txt_Huy.BackgroundColor = SystemColors.ButtonHighlight;
+            txt_Huy.BorderColor = SystemColors.HotTrack;
+            txt_Huy.BorderRadius = 35;
+            txt_Huy.BorderSize = 1;
+            txt_Huy.FlatAppearance.BorderSize = 0;
+            txt_Huy.FlatStyle = FlatStyle.Flat;
+            txt_Huy.ForeColor = SystemColors.HotTrack;
+            txt_Huy.Location = new Point(57, 327);
+            txt_Huy.Name = "txt_Huy";
+            txt_Huy.Size = new Size(366, 77);
+            txt_Huy.TabIndex = 36;
+            txt_Huy.Text = "Hủy";
+            txt_Huy.TextColor = SystemColors.HotTrack;
+            txt_Huy.UseVisualStyleBackColor = false;
             // 
-            // cusButton1
+            // txt_datphong
             // 
-            cusButton1.BackColor = SystemColors.ButtonHighlight;
-            cusButton1.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton1.BorderColor = SystemColors.HotTrack;
-            cusButton1.BorderRadius = 35;
-            cusButton1.BorderSize = 1;
-            cusButton1.FlatAppearance.BorderSize = 0;
-            cusButton1.FlatStyle = FlatStyle.Flat;
-            cusButton1.ForeColor = SystemColors.HotTrack;
-            cusButton1.Location = new Point(30, 180);
-            cusButton1.Name = "cusButton1";
-            cusButton1.Size = new Size(443, 87);
-            cusButton1.TabIndex = 30;
-            cusButton1.Text = "Đặt phòng";
-            cusButton1.TextColor = SystemColors.HotTrack;
-            cusButton1.UseVisualStyleBackColor = false;
-            cusButton1.Click += cusButton1_Click;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            checkBox1.Location = new Point(57, 100);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(362, 44);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "Chuyển đến nhận phòng";
-            checkBox1.UseVisualStyleBackColor = true;
+            txt_datphong.BackColor = SystemColors.ButtonHighlight;
+            txt_datphong.BackgroundColor = SystemColors.ButtonHighlight;
+            txt_datphong.BorderColor = SystemColors.HotTrack;
+            txt_datphong.BorderRadius = 35;
+            txt_datphong.BorderSize = 1;
+            txt_datphong.FlatAppearance.BorderSize = 0;
+            txt_datphong.FlatStyle = FlatStyle.Flat;
+            txt_datphong.ForeColor = SystemColors.HotTrack;
+            txt_datphong.Location = new Point(57, 185);
+            txt_datphong.Name = "txt_datphong";
+            txt_datphong.Size = new Size(366, 77);
+            txt_datphong.TabIndex = 35;
+            txt_datphong.Text = "Đặt phòng";
+            txt_datphong.TextColor = SystemColors.HotTrack;
+            txt_datphong.UseVisualStyleBackColor = false;
+            txt_datphong.Click += txt_datphong_Click;
             // 
             // groupBox4
             // 
@@ -270,7 +257,6 @@
             label12.Size = new Size(180, 37);
             label12.TabIndex = 12;
             label12.Text = "Số điện thoại:";
-            label12.Click += label12_Click;
             // 
             // cmnd
             // 
@@ -406,7 +392,6 @@
             tenloaiphong.Name = "tenloaiphong";
             tenloaiphong.Size = new Size(451, 43);
             tenloaiphong.TabIndex = 7;
-            tenloaiphong.TextChanged += tenloaiphong_TextChanged;
             // 
             // label16
             // 
@@ -420,7 +405,7 @@
             // 
             // maphong
             // 
-            maphong.Location = new Point(22, 109);
+            maphong.Location = new Point(22, 104);
             maphong.Name = "maphong";
             maphong.Size = new Size(451, 43);
             maphong.TabIndex = 5;
@@ -455,12 +440,12 @@
             thongtindangky.TabIndex = 14;
             thongtindangky.TabStop = false;
             thongtindangky.Text = "Thông tin đăng ký";
-            thongtindangky.Enter += thongtindangky_Enter;
             // 
             // datecheckout
             // 
+            datecheckout.CustomFormat = "hh:mm:ss dd/MM/yyyy";
             datecheckout.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            datecheckout.Format = DateTimePickerFormat.Short;
+            datecheckout.Format = DateTimePickerFormat.Custom;
             datecheckout.Location = new Point(440, 222);
             datecheckout.Name = "datecheckout";
             datecheckout.Size = new Size(400, 43);
@@ -480,9 +465,10 @@
             // 
             datecheckin.CalendarMonthBackground = SystemColors.ActiveCaption;
             datecheckin.CalendarTrailingForeColor = SystemColors.GradientInactiveCaption;
+            datecheckin.CustomFormat = "hh:mm:ss dd/MM/yyyy  ";
             datecheckin.Enabled = false;
             datecheckin.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            datecheckin.Format = DateTimePickerFormat.Short;
+            datecheckin.Format = DateTimePickerFormat.Custom;
             datecheckin.ImeMode = ImeMode.On;
             datecheckin.Location = new Point(440, 99);
             datecheckin.Name = "datecheckin";
@@ -522,7 +508,7 @@
             // loaiphong
             // 
             loaiphong.FormattingEnabled = true;
-            loaiphong.Items.AddRange(new object[] { "Phòng Deluxe (DLX)", "Phòng Suite (SUT)", "Phòng Superior (SUP)", "Phòng Standard (STD)" });
+            loaiphong.Items.AddRange(new object[] { "Phòng Suite (SUT)", "Phòng Deluxe (DLX)", "Phòng Superior (SUP)", "Phòng Standard (STD)" });
             loaiphong.Location = new Point(14, 99);
             loaiphong.Name = "loaiphong";
             loaiphong.Size = new Size(369, 48);
@@ -553,7 +539,7 @@
             // groupBox3
             // 
             groupBox3.BackColor = SystemColors.ButtonHighlight;
-            groupBox3.Controls.Add(txt_bookingdetail);
+            groupBox3.Controls.Add(txt_xemchitietdatphong);
             groupBox3.Controls.Add(dataGridView1);
             groupBox3.FlatStyle = FlatStyle.Flat;
             groupBox3.Font = new Font("Segoe UI", 12F, FontStyle.Italic);
@@ -565,48 +551,48 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Danh sách đặt phòng trong ngày";
             // 
-            // txt_bookingdetail
+            // txt_xemchitietdatphong
             // 
-            txt_bookingdetail.BackColor = SystemColors.ButtonHighlight;
-            txt_bookingdetail.BackgroundColor = SystemColors.ButtonHighlight;
-            txt_bookingdetail.BorderColor = SystemColors.HotTrack;
-            txt_bookingdetail.BorderRadius = 35;
-            txt_bookingdetail.BorderSize = 1;
-            txt_bookingdetail.FlatAppearance.BorderSize = 0;
-            txt_bookingdetail.FlatStyle = FlatStyle.Flat;
-            txt_bookingdetail.ForeColor = SystemColors.HotTrack;
-            txt_bookingdetail.Location = new Point(840, 1093);
-            txt_bookingdetail.Name = "txt_bookingdetail";
-            txt_bookingdetail.Size = new Size(443, 87);
-            txt_bookingdetail.TabIndex = 33;
-            txt_bookingdetail.Text = "Xem chi tiết";
-            txt_bookingdetail.TextColor = SystemColors.HotTrack;
-            txt_bookingdetail.UseVisualStyleBackColor = false;
-            txt_bookingdetail.Click += txt_bookingdetail_Click;
+            txt_xemchitietdatphong.BackColor = SystemColors.ButtonHighlight;
+            txt_xemchitietdatphong.BackgroundColor = SystemColors.ButtonHighlight;
+            txt_xemchitietdatphong.BorderColor = SystemColors.HotTrack;
+            txt_xemchitietdatphong.BorderRadius = 35;
+            txt_xemchitietdatphong.BorderSize = 1;
+            txt_xemchitietdatphong.FlatAppearance.BorderSize = 0;
+            txt_xemchitietdatphong.FlatStyle = FlatStyle.Flat;
+            txt_xemchitietdatphong.ForeColor = SystemColors.HotTrack;
+            txt_xemchitietdatphong.Location = new Point(907, 1039);
+            txt_xemchitietdatphong.Name = "txt_xemchitietdatphong";
+            txt_xemchitietdatphong.Size = new Size(366, 77);
+            txt_xemchitietdatphong.TabIndex = 38;
+            txt_xemchitietdatphong.Text = "Xem chi tiết";
+            txt_xemchitietdatphong.TextColor = SystemColors.HotTrack;
+            txt_xemchitietdatphong.UseVisualStyleBackColor = false;
+            txt_xemchitietdatphong.Click += txt_xemchitietdatphong_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = SystemColors.HotTrack;
             dataGridView1.Location = new Point(19, 70);
             dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 10.125F, FontStyle.Italic, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10.125F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.Size = new Size(1282, 604);
             dataGridView1.TabIndex = 0;
@@ -614,7 +600,7 @@
             // groupBox6
             // 
             groupBox6.BackColor = SystemColors.ButtonHighlight;
-            groupBox6.Controls.Add(btn_search);
+            groupBox6.Controls.Add(timkiemdatphong);
             groupBox6.Controls.Add(txt_cccd);
             groupBox6.Controls.Add(label21);
             groupBox6.FlatStyle = FlatStyle.Flat;
@@ -627,24 +613,24 @@
             groupBox6.TabStop = false;
             groupBox6.Text = "Tìm kiếm khách hàng";
             // 
-            // btn_search
+            // timkiemdatphong
             // 
-            btn_search.BackColor = SystemColors.ButtonHighlight;
-            btn_search.BackgroundColor = SystemColors.ButtonHighlight;
-            btn_search.BorderColor = SystemColors.HotTrack;
-            btn_search.BorderRadius = 35;
-            btn_search.BorderSize = 1;
-            btn_search.FlatAppearance.BorderSize = 0;
-            btn_search.FlatStyle = FlatStyle.Flat;
-            btn_search.ForeColor = SystemColors.HotTrack;
-            btn_search.Location = new Point(452, 87);
-            btn_search.Name = "btn_search";
-            btn_search.Size = new Size(362, 68);
-            btn_search.TabIndex = 29;
-            btn_search.Text = "Tìm kiếm";
-            btn_search.TextColor = SystemColors.HotTrack;
-            btn_search.UseVisualStyleBackColor = false;
-            btn_search.Click += btn_search_Click;
+            timkiemdatphong.BackColor = SystemColors.ButtonHighlight;
+            timkiemdatphong.BackgroundColor = SystemColors.ButtonHighlight;
+            timkiemdatphong.BorderColor = SystemColors.HotTrack;
+            timkiemdatphong.BorderRadius = 35;
+            timkiemdatphong.BorderSize = 1;
+            timkiemdatphong.FlatAppearance.BorderSize = 0;
+            timkiemdatphong.FlatStyle = FlatStyle.Flat;
+            timkiemdatphong.ForeColor = SystemColors.HotTrack;
+            timkiemdatphong.Location = new Point(460, 79);
+            timkiemdatphong.Name = "timkiemdatphong";
+            timkiemdatphong.Size = new Size(366, 77);
+            timkiemdatphong.TabIndex = 37;
+            timkiemdatphong.Text = "Tìm kiếm";
+            timkiemdatphong.TextColor = SystemColors.HotTrack;
+            timkiemdatphong.UseVisualStyleBackColor = false;
+            timkiemdatphong.Click += timkiemdatphong_Click;
             // 
             // txt_cccd
             // 
@@ -673,7 +659,7 @@
             txt_Exit.Size = new Size(38, 41);
             txt_Exit.TabIndex = 19;
             txt_Exit.Text = "X";
-            txt_Exit.Click += label10_Click;
+            txt_Exit.Click += txt_Exit_Click;
             // 
             // booking
             // 
@@ -693,7 +679,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "booking";
             groupBox5.ResumeLayout(false);
-            groupBox5.PerformLayout();
             groupBox4.ResumeLayout(false);
             groupBox4.PerformLayout();
             thongtinloaiphong.ResumeLayout(false);
@@ -711,7 +696,6 @@
         #endregion
 
         private GroupBox groupBox5;
-        private CheckBox checkBox1;
         private GroupBox groupBox4;
         private Label label14;
         private ComboBox gender;
@@ -759,5 +743,10 @@
         private HotelManage.Assets.CusButton txt_bookingdetail;
         private Label txt_Exit;
         private TextBox country;
+        private HotelManage.Assets.CusButton dongPhong;
+        private HotelManage.Assets.CusButton txt_Huy;
+        private HotelManage.Assets.CusButton txt_datphong;
+        private HotelManage.Assets.CusButton txt_xemchitietdatphong;
+        private HotelManage.Assets.CusButton timkiemdatphong;
     }
 }

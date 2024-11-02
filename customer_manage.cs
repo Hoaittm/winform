@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-
+using Microsoft.Office.Interop.Excel;
+using app = Microsoft.Office.Interop.Excel.Application;
 namespace HotelManagementSystem
 {
     public partial class customer_manage : Form
@@ -11,7 +12,6 @@ namespace HotelManagementSystem
         private string connectString = "Data Source=DESKTOP-QSUMM6P\\SQLEXPRESS;Initial Catalog=TranThiMinhHoai_winform;Integrated Security=True;TrustServerCertificate=True;";
         private int selectedRowId = -1;
         private List<Customer> customers = new List<Customer>();
-
         public customer_manage()
         {
             InitializeComponent();
@@ -26,9 +26,10 @@ namespace HotelManagementSystem
                 try
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand("SELECT * FROM customer", connection);
+                    SqlCommand command = new SqlCommand("SELECT id,name,dob,cccd,address,type,phone,gender,country FROM customer", connection);
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    DataTable dataTable = new DataTable();
+                    System.Data.DataTable dataTable = new System.Data.DataTable();
+
                     adapter.Fill(dataTable);
 
                     //if (dataTable.Rows.Count > 0)
@@ -44,6 +45,17 @@ namespace HotelManagementSystem
 
                     // Set the DataSource to display the data
                     dataGridView1.DataSource = dataTable;
+                    dataGridView1.Columns["id"].HeaderText = "Mã KH";
+                    dataGridView1.Columns["name"].HeaderText = "Họ và Tên";
+                    dataGridView1.Columns["dob"].HeaderText = "Ngày sinh";
+                    dataGridView1.Columns["cccd"].HeaderText = "Số CCCD";
+                    dataGridView1.Columns["address"].HeaderText = "Địa chỉ";
+
+                    dataGridView1.Columns["type"].HeaderText = "Loại KH";
+                    dataGridView1.Columns["phone"].HeaderText = "Điện thoại";
+                    dataGridView1.Columns["gender"].HeaderText = "Giới tính";
+                    dataGridView1.Columns["country"].HeaderText = "Quốc tịch";
+
                 }
                 catch (Exception ex)
                 {
@@ -114,7 +126,7 @@ namespace HotelManagementSystem
 
             if (string.IsNullOrEmpty(phoneNumber))
             {
-                MessageBox.Show("Vui lòng nhập số điện thoại để tìm kiếm!");
+                MessageBox.Show("Vui lòng nhập số CCCD để tìm kiếm!");
                 return;
             }
 
@@ -126,10 +138,10 @@ namespace HotelManagementSystem
                 {
                     connection.Open();
 
-                    string query = "SELECT id,name,dob,cccd, address,type,phone,gender, country FROM customer WHERE phone = @phone";
+                    string query = "SELECT id,name,dob,cccd, address,type,phone,gender, country FROM customer WHERE cccd = @cccd";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@Phone", phoneNumber);
+                        command.Parameters.AddWithValue("@cccd", phoneNumber);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -157,11 +169,12 @@ namespace HotelManagementSystem
                                 gender.Text = customerGender;
                                 country.Text = customerCountry;
 
+                                id.Enabled = false;
                                 // Nếu cần hiển thị thêm điều khiển, có thể thêm vào như trong ví dụ trên
                             }
                             else
                             {
-                                MessageBox.Show("Không tìm thấy khách hàng với số điện thoại này.");
+                                MessageBox.Show("Không tìm thấy CCCD với số điện thoại này.");
                             }
                         }
                     }
@@ -181,15 +194,15 @@ namespace HotelManagementSystem
 
         private void txt_update_Click(object sender, EventArgs e)
         {
-            // Check if any customer information is displayed for updating
+            // Kiểm tra xem có thông tin khách hàng nào đang được hiển thị để cập nhật không
             if (string.IsNullOrWhiteSpace(id.Text))
             {
                 MessageBox.Show("Vui lòng tìm kiếm một khách hàng trước khi cập nhật!");
                 return;
             }
 
-            // Retrieve updated customer data from the TextBoxes
-            string customerId = id.Text; // Assuming you have a TextBox named 'id'
+            // Lấy dữ liệu cập nhật từ các TextBox
+            string customerId = id.Text; // Giả sử bạn có một TextBox tên là 'id'
             string customerName = name.Text;
             string customerDob = dob.Text;
             string customerCccd = cccd.Text;
@@ -199,14 +212,44 @@ namespace HotelManagementSystem
             string customerGender = gender.Text;
             string customerCountry = country.Text;
 
-            // Validate the input
+            // Kiểm tra thông tin đầu vào
             if (string.IsNullOrWhiteSpace(customerName))
             {
                 MessageBox.Show("Vui lòng nhập tên khách hàng!");
                 return;
             }
 
-            // Update the customer information in the database
+            // Kiểm tra CCCD
+            if (!IsValidCccd(customerCccd))
+            {
+                MessageBox.Show("Số CCCD phải có 12 chữ số và không được chứa ký tự khác.");
+                return;
+            }
+
+            // Kiểm tra số điện thoại
+            if (!IsValidPhone(customerPhone))
+            {
+                MessageBox.Show("Số điện thoại phải có 10 chữ số.");
+                return;
+            }
+
+            // Chuyển đổi sang int và đảm bảo kiểm tra
+            int customerCccdValue;
+            int customerPhoneValue;
+
+            if (!int.TryParse(customerCccd, out customerCccdValue))
+            {
+                MessageBox.Show("Không thể chuyển đổi CCCD thành số. Vui lòng kiểm tra lại.");
+                return;
+            }
+
+            if (!int.TryParse(customerPhone, out customerPhoneValue))
+            {
+                MessageBox.Show("Không thể chuyển đổi số điện thoại thành số. Vui lòng kiểm tra lại.");
+                return;
+            }
+
+            // Cập nhật thông tin khách hàng trong cơ sở dữ liệu
             string query = "UPDATE customer SET name = @name, dob = @dob, cccd = @cccd, address = @address, type = @type, phone = @phone, gender = @gender, country = @country WHERE id = @id";
 
             using (SqlConnection connection = new SqlConnection(connectString))
@@ -216,14 +259,14 @@ namespace HotelManagementSystem
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        // Add parameters to prevent SQL injection
+                        // Thêm tham số để ngăn chặn SQL injection
                         command.Parameters.AddWithValue("@id", customerId);
                         command.Parameters.AddWithValue("@name", customerName);
                         command.Parameters.AddWithValue("@dob", customerDob);
-                        command.Parameters.AddWithValue("@cccd", customerCccd);
+                        command.Parameters.AddWithValue("@cccd", customerCccdValue);
                         command.Parameters.AddWithValue("@address", customerAddress);
                         command.Parameters.AddWithValue("@type", customerType);
-                        command.Parameters.AddWithValue("@phone", customerPhone);
+                        command.Parameters.AddWithValue("@phone", customerPhoneValue);
                         command.Parameters.AddWithValue("@gender", customerGender);
                         command.Parameters.AddWithValue("@country", customerCountry);
 
@@ -232,7 +275,7 @@ namespace HotelManagementSystem
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Cập nhật thông tin khách hàng thành công!");
-                            LoadData(); // Reload the DataGridView to reflect changes
+                            LoadData(); // Tải lại DataGridView để phản ánh các thay đổi
                         }
                         else
                         {
@@ -246,7 +289,18 @@ namespace HotelManagementSystem
                 }
             }
         }
+        private bool IsValidCccd(string cccd)
+        {
+            // Kiểm tra nếu độ dài là 12 và chỉ chứa ký tự số
+            return cccd.Length == 12 && cccd.All(char.IsDigit);
+        }
 
+        // Phương thức kiểm tra tính hợp lệ của số điện thoại
+        private bool IsValidPhone(string phone)
+        {
+            // Kiểm tra nếu độ dài là 10 và chỉ chứa ký tự số
+            return phone.Length == 10 && phone.All(char.IsDigit);
+        }
         private void txt_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -255,6 +309,83 @@ namespace HotelManagementSystem
         private void groupBox4_Enter(object sender, EventArgs e)
         {
 
+        }
+        private void export2Excel(DataGridView g, string duongdan, string tenTap)
+        {
+            app obj = new app();
+            obj.Application.Workbooks.Add(Type.Missing);
+            obj.Columns.ColumnWidth = 25;
+            for (int i = 1; i < g.Columns.Count + 1; i++)
+            {
+                obj.Cells[1, i] = g.Columns[i - 1].HeaderText;
+            }
+            for (int i = 0; i < g.Rows.Count; i++)
+            {
+                for (int j = 0; j < g.Columns.Count; j++)
+                {
+                    if (g.Rows[i].Cells[j].Value != null)
+                    {
+                        obj.Cells[i + 2, j + 1] = g.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+            }
+            obj.ActiveWorkbook.SaveCopyAs(duongdan + tenTap + ".xlsx");
+            obj.ActiveWorkbook.Saved = true;
+        }
+        private void xuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            export2Excel(dataGridView1, @"D:\", "xuatfileexcel");
+        }
+
+        private void phone_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void xoakhachhang_Click(object sender, EventArgs e)
+        {
+            string CCCD = cccd.Text.Trim(); // Loại bỏ khoảng trắng
+
+            if (string.IsNullOrEmpty(CCCD))
+            {
+                MessageBox.Show("Vui lòng nhập số CCCD để tìm kiếm!");
+                return;
+            }
+
+            string connectionString = "Data Source=DESKTOP-QSUMM6P\\SQLEXPRESS;Initial Catalog=TranThiMinhHoai_winform;Integrated Security=True;TrustServerCertificate=True;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Chỉ định câu lệnh DELETE đúng cách
+                    string query = "DELETE FROM customer WHERE cccd = @cccd";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@cccd", CCCD);
+
+                        // Thực thi câu lệnh và lấy số dòng bị ảnh hưởng
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // Kiểm tra xem có bản ghi nào bị xóa không
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Khách hàng đã được xóa thành công.");
+                            LoadData();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy khách hàng với số điện thoại này.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message);
+                }
+            }
         }
     }
 }

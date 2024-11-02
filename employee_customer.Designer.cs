@@ -30,7 +30,8 @@
         {
             groupBox4 = new GroupBox();
             dataGridView1 = new DataGridView();
-            button5 = new Button();
+            menuStrip1 = new MenuStrip();
+            xuấtFileExcelToolStripMenuItem = new ToolStripMenuItem();
             groupBox2 = new GroupBox();
             label3 = new Label();
             id = new TextBox();
@@ -56,7 +57,6 @@
             Exit = new HotelManage.Assets.CusButton();
             add_employee = new HotelManage.Assets.CusButton();
             txt_update = new HotelManage.Assets.CusButton();
-            cusButton2 = new HotelManage.Assets.CusButton();
             groupBox5 = new GroupBox();
             ngayvaolam = new DateTimePicker();
             label14 = new Label();
@@ -67,6 +67,7 @@
             label15 = new Label();
             groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            menuStrip1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -77,7 +78,7 @@
             // 
             groupBox4.BackColor = SystemColors.ButtonHighlight;
             groupBox4.Controls.Add(dataGridView1);
-            groupBox4.Controls.Add(button5);
+            groupBox4.Controls.Add(menuStrip1);
             groupBox4.Font = new Font("Segoe UI", 12F);
             groupBox4.ForeColor = SystemColors.HotTrack;
             groupBox4.Location = new Point(1086, 78);
@@ -92,21 +93,33 @@
             // 
             dataGridView1.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(28, 125);
+            dataGridView1.Location = new Point(9, 108);
+            dataGridView1.Margin = new Padding(6);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 82;
             dataGridView1.Size = new Size(1149, 727);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // button5
+            // menuStrip1
             // 
-            button5.Location = new Point(1027, 49);
-            button5.Name = "button5";
-            button5.Size = new Size(150, 46);
-            button5.TabIndex = 0;
-            button5.Text = "Xuất";
-            button5.UseVisualStyleBackColor = true;
+            menuStrip1.BackColor = SystemColors.ButtonHighlight;
+            menuStrip1.ImageScalingSize = new Size(32, 32);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { xuấtFileExcelToolStripMenuItem });
+            menuStrip1.Location = new Point(3, 46);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1200, 56);
+            menuStrip1.TabIndex = 2;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // xuấtFileExcelToolStripMenuItem
+            // 
+            xuấtFileExcelToolStripMenuItem.BackColor = SystemColors.ActiveCaption;
+            xuấtFileExcelToolStripMenuItem.Name = "xuấtFileExcelToolStripMenuItem";
+            xuấtFileExcelToolStripMenuItem.Padding = new Padding(8);
+            xuấtFileExcelToolStripMenuItem.Size = new Size(182, 52);
+            xuấtFileExcelToolStripMenuItem.Text = "Xuất file Excel";
+            xuấtFileExcelToolStripMenuItem.Click += xuấtFileExcelToolStripMenuItem_Click;
             // 
             // groupBox2
             // 
@@ -155,7 +168,7 @@
             // address
             // 
             address.Font = new Font("Segoe UI", 11F);
-            address.Location = new Point(32, 838);
+            address.Location = new Point(38, 838);
             address.Name = "address";
             address.Size = new Size(388, 47);
             address.TabIndex = 23;
@@ -163,7 +176,7 @@
             // phone
             // 
             phone.Font = new Font("Segoe UI", 11F);
-            phone.Location = new Point(34, 735);
+            phone.Location = new Point(40, 735);
             phone.Name = "phone";
             phone.Size = new Size(386, 47);
             phone.TabIndex = 22;
@@ -282,7 +295,7 @@
             // txt_input
             // 
             txt_input.Font = new Font("Segoe UI", 11F);
-            txt_input.Location = new Point(41, 171);
+            txt_input.Location = new Point(59, 136);
             txt_input.Multiline = true;
             txt_input.Name = "txt_input";
             txt_input.Size = new Size(430, 68);
@@ -291,7 +304,7 @@
             // btn_search
             // 
             btn_search.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_search.Location = new Point(41, 270);
+            btn_search.Location = new Point(59, 257);
             btn_search.Name = "btn_search";
             btn_search.Size = new Size(430, 78);
             btn_search.TabIndex = 3;
@@ -305,9 +318,9 @@
             label2.Font = new Font("Segoe UI", 11F);
             label2.Location = new Point(26, 66);
             label2.Name = "label2";
-            label2.Size = new Size(213, 82);
+            label2.Size = new Size(194, 41);
             label2.TabIndex = 0;
-            label2.Text = "Tài khoản/Tên/\r\nCMND/SĐT:";
+            label2.Text = "Nhập CMND:";
             // 
             // label1
             // 
@@ -327,10 +340,9 @@
             groupBox3.Controls.Add(Exit);
             groupBox3.Controls.Add(add_employee);
             groupBox3.Controls.Add(txt_update);
-            groupBox3.Controls.Add(cusButton2);
             groupBox3.Font = new Font("Segoe UI", 12F);
             groupBox3.ForeColor = SystemColors.HotTrack;
-            groupBox3.Location = new Point(27, 1028);
+            groupBox3.Location = new Point(28, 1028);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(1039, 369);
             groupBox3.TabIndex = 11;
@@ -347,11 +359,11 @@
             authorities.FlatAppearance.BorderSize = 0;
             authorities.FlatStyle = FlatStyle.Flat;
             authorities.ForeColor = SystemColors.HotTrack;
-            authorities.Location = new Point(563, 177);
+            authorities.Location = new Point(563, 229);
             authorities.Name = "authorities";
             authorities.Size = new Size(417, 77);
             authorities.TabIndex = 38;
-            authorities.Text = "Quyền truy cập";
+            authorities.Text = "Xóa NV";
             authorities.TextColor = SystemColors.HotTrack;
             authorities.UseVisualStyleBackColor = false;
             authorities.Click += authorities_Click;
@@ -366,7 +378,7 @@
             Exit.FlatAppearance.BorderSize = 0;
             Exit.FlatStyle = FlatStyle.Flat;
             Exit.ForeColor = SystemColors.HotTrack;
-            Exit.Location = new Point(26, 270);
+            Exit.Location = new Point(26, 229);
             Exit.Name = "Exit";
             Exit.Size = new Size(417, 77);
             Exit.TabIndex = 39;
@@ -413,24 +425,6 @@
             txt_update.UseVisualStyleBackColor = false;
             txt_update.Click += txt_update_Click;
             // 
-            // cusButton2
-            // 
-            cusButton2.BackColor = SystemColors.ButtonHighlight;
-            cusButton2.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton2.BorderColor = SystemColors.HotTrack;
-            cusButton2.BorderRadius = 35;
-            cusButton2.BorderSize = 1;
-            cusButton2.FlatAppearance.BorderSize = 0;
-            cusButton2.FlatStyle = FlatStyle.Flat;
-            cusButton2.ForeColor = SystemColors.HotTrack;
-            cusButton2.Location = new Point(26, 177);
-            cusButton2.Name = "cusButton2";
-            cusButton2.Size = new Size(417, 77);
-            cusButton2.TabIndex = 36;
-            cusButton2.Text = "Đặt lại mật khẩu";
-            cusButton2.TextColor = SystemColors.HotTrack;
-            cusButton2.UseVisualStyleBackColor = false;
-            // 
             // groupBox5
             // 
             groupBox5.BackColor = SystemColors.ButtonHighlight;
@@ -455,16 +449,16 @@
             ngayvaolam.CustomFormat = "dd/mm/yyyy";
             ngayvaolam.Font = new Font("Segoe UI", 10F);
             ngayvaolam.Format = DateTimePickerFormat.Short;
-            ngayvaolam.Location = new Point(41, 428);
+            ngayvaolam.Location = new Point(41, 431);
             ngayvaolam.Name = "ngayvaolam";
-            ngayvaolam.Size = new Size(356, 43);
+            ngayvaolam.Size = new Size(430, 43);
             ngayvaolam.TabIndex = 23;
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 11F);
-            label14.Location = new Point(41, 370);
+            label14.Location = new Point(33, 373);
             label14.Name = "label14";
             label14.Size = new Size(206, 41);
             label14.TabIndex = 22;
@@ -474,16 +468,16 @@
             // 
             type.FormattingEnabled = true;
             type.Items.AddRange(new object[] { "Quản lý", "Lễ tân" });
-            type.Location = new Point(42, 285);
+            type.Location = new Point(42, 284);
             type.Name = "type";
-            type.Size = new Size(444, 53);
+            type.Size = new Size(429, 53);
             type.TabIndex = 12;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 11F);
-            label13.Location = new Point(26, 222);
+            label13.Location = new Point(33, 222);
             label13.Name = "label13";
             label13.Size = new Size(215, 41);
             label13.TabIndex = 11;
@@ -495,7 +489,7 @@
             username.Location = new Point(42, 121);
             username.Multiline = true;
             username.Name = "username";
-            username.Size = new Size(444, 68);
+            username.Size = new Size(429, 68);
             username.TabIndex = 4;
             // 
             // label12
@@ -537,7 +531,10 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "employee_customer";
             groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -594,5 +591,7 @@
         private HotelManage.Assets.CusButton add_employee;
         private Label label3;
         private TextBox id;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem xuấtFileExcelToolStripMenuItem;
     }
 }

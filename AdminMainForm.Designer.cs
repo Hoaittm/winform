@@ -112,6 +112,7 @@
             Dashboard_Load.Name = "Dashboard_Load";
             Dashboard_Load.Size = new Size(2320, 48);
             Dashboard_Load.TabIndex = 0;
+            Dashboard_Load.Paint += Dashboard_Load_Paint;
             // 
             // label2
             // 
@@ -143,9 +144,8 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(125, 329);
             label3.Name = "label3";
-            label3.Size = new Size(222, 40);
+            label3.Size = new Size(0, 40);
             label3.TabIndex = 2;
-            label3.Text = "Welcome, User";
             // 
             // dashborad_load
             // 
@@ -244,11 +244,12 @@
             pictureBox2.Size = new Size(70, 74);
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(106, 56);
+            pictureBox1.Location = new Point(100, 83);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(253, 252);
             pictureBox1.TabIndex = 11;

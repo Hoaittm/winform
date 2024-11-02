@@ -182,6 +182,7 @@
             groupBox1.TabIndex = 28;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin nhân viên";
+            groupBox1.Enter += groupBox1_Enter;
             // 
             // ngayvaolam
             // 
@@ -367,6 +368,7 @@
             label1.Size = new Size(290, 50);
             label1.TabIndex = 27;
             label1.Text = "Thêm nhân viên";
+            label1.Click += label1_Click;
             // 
             // label15
             // 

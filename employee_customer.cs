@@ -9,7 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Microsoft.Office.Interop.Excel;
+using app = Microsoft.Office.Interop.Excel.Application;
 namespace HotelManagementSystem
 {
     public partial class employee_customer : Form
@@ -29,24 +30,32 @@ namespace HotelManagementSystem
                 try
                 {
                     connection.Open();
-                    SqlCommand command = new SqlCommand("SELECT * FROM employee", connection);
+                    SqlCommand command = new SqlCommand("SELECT id, name, dob, cccd, address, type, phone, gender, username, startingDate FROM employee", connection);
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
-                    DataTable dataTable = new DataTable();
+                    System.Data.DataTable dataTable = new System.Data.DataTable();
                     adapter.Fill(dataTable);
 
-                    //if (dataTable.Rows.Count > 0)
-                    //{
-                    //    MessageBox.Show("Data loaded successfully, rows: " + dataTable.Rows.Count);
-                    //}
-
-                    // Ensure AutoGenerateColumns is true
                     dataGridView1.AutoGenerateColumns = true;
-
-                    // Clear any previous columns
                     dataGridView1.Columns.Clear();
-
-                    // Set the DataSource to display the data
                     dataGridView1.DataSource = dataTable;
+
+                    // Set the header text for each column
+                    dataGridView1.Columns["id"].HeaderText = "Mã Nhân Viên";
+                    dataGridView1.Columns["name"].HeaderText = "Tên";
+                    dataGridView1.Columns["dob"].HeaderText = "Ngày Sinh";
+                    dataGridView1.Columns["cccd"].HeaderText = "CCCD";
+                    dataGridView1.Columns["address"].HeaderText = "Địa Chỉ";
+                    dataGridView1.Columns["type"].HeaderText = "Loại";
+                    dataGridView1.Columns["phone"].HeaderText = "Số Điện Thoại";
+                    dataGridView1.Columns["gender"].HeaderText = "Giới Tính";
+                    dataGridView1.Columns["username"].HeaderText = "Tên Đăng Nhập";
+                    dataGridView1.Columns["startingDate"].HeaderText = "Ngày Vào Làm";
+
+                    // Hide the password column if it is present (just in case)
+                    if (dataGridView1.Columns.Contains("password"))
+                    {
+                        dataGridView1.Columns["password"].Visible = false;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -54,6 +63,8 @@ namespace HotelManagementSystem
                 }
             }
         }
+    
+
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -107,8 +118,49 @@ namespace HotelManagementSystem
 
         private void authorities_Click(object sender, EventArgs e)
         {
-            add_access add_Access = new add_access();
-            add_Access.Show();
+            string cccdNumber = txt_input.Text.Trim(); // Loại bỏ khoảng trắng
+
+            if (string.IsNullOrEmpty(cccdNumber))
+            {
+                MessageBox.Show("Vui lòng nhập số CCCD để tìm kiếm!");
+                return;
+            }
+
+            string connectionString = "Data Source=DESKTOP-QSUMM6P\\SQLEXPRESS;Initial Catalog=TranThiMinhHoai_winform;Integrated Security=True;TrustServerCertificate=True;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    // Truy vấn để xóa nhân viên dựa trên số CCCD
+                    string query = "DELETE FROM employee WHERE cccd = @cccd";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@cccd", cccdNumber);
+
+                        // Thực thi câu lệnh và lấy số dòng bị ảnh hưởng
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // Kiểm tra xem có bản ghi nào bị xóa không
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Nhân viên đã được xóa thành công.");
+                            LoadData(); // Reload the data to reflect changes
+                        }
+                        else
+                        {
+                            MessageBox.Show("Không tìm thấy nhân viên với số CCCD này.");
+                        }
+                    }
+                }
+               
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi khác: " + ex.Message);
+                }
+            }
         }
 
         private void Exit_Click(object sender, EventArgs e)
@@ -127,7 +179,7 @@ namespace HotelManagementSystem
 
             if (string.IsNullOrEmpty(cccdNumber))
             {
-                MessageBox.Show("Vui lòng nhập số điện thoại để tìm kiếm!");
+                MessageBox.Show("Vui lòng nhập số CCCD để tìm kiếm!");
                 return;
             }
 
@@ -139,7 +191,8 @@ namespace HotelManagementSystem
                 {
                     connection.Open();
 
-                    string query = "SELECT id,name,dob,cccd, address,type,phone,gender,username,startingDate FROM employee WHERE cccd = @cccd";
+                    // Exclude the password field from the query
+                    string query = "SELECT id, name, dob, cccd, address, type, phone, gender, username, startingDate FROM employee WHERE cccd = @cccd";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@cccd", cccdNumber);
@@ -148,7 +201,7 @@ namespace HotelManagementSystem
                         {
                             if (reader.Read())
                             {
-                                // Lấy thông tin khách hàng
+                                // Retrieve employee information
                                 string customerId = reader["id"].ToString();
                                 string customerName = reader["name"].ToString();
                                 string customerDob = reader["dob"].ToString();
@@ -160,7 +213,7 @@ namespace HotelManagementSystem
                                 string customerUsername = reader["username"].ToString();
                                 string customerStartingDate = reader["startingDate"].ToString();
 
-                                // Hiển thị thông tin khách hàng lên các điều khiển trong GroupBox\
+                                // Display employee information in the form controls
                                 id.Text = customerId;
                                 name.Text = customerName;
                                 dob.Text = customerDob;
@@ -171,19 +224,22 @@ namespace HotelManagementSystem
                                 gender.Text = customerGender;
                                 username.Text = customerUsername;
                                 ngayvaolam.Text = customerStartingDate;
-
-                                // Nếu cần hiển thị thêm điều khiển, có thể thêm vào như trong ví dụ trên
+                                id.Enabled=false;
                             }
                             else
                             {
-                                MessageBox.Show("Không tìm thấy khách hàng với số điện thoại này.");
+                                MessageBox.Show("Không tìm thấy khách hàng với số CCCD này.");
                             }
                         }
                     }
                 }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Lỗi SQL: " + ex.Message);
+                }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi: " + ex.Message);
+                    MessageBox.Show("Lỗi khác: " + ex.Message);
                 }
             }
         }
@@ -258,7 +314,7 @@ namespace HotelManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi: " + ex.Message);
+                    MessageBox.Show("Lỗi up: " + ex.Message);
                 }
             }
         }
@@ -266,6 +322,34 @@ namespace HotelManagementSystem
         private void groupBox4_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void export2Excel(DataGridView g, string duongdan, string tenTap)
+        {
+            app obj = new app();
+            obj.Application.Workbooks.Add(Type.Missing);
+            obj.Columns.ColumnWidth = 25;
+            for (int i = 1; i < g.Columns.Count + 1; i++)
+            {
+                obj.Cells[1, i] = g.Columns[i - 1].HeaderText;
+            }
+            for (int i = 0; i < g.Rows.Count; i++)
+            {
+                for (int j = 0; j < g.Columns.Count; j++)
+                {
+                    if (g.Rows[i].Cells[j].Value != null)
+                    {
+                        obj.Cells[i + 2, j + 1] = g.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
+            }
+            obj.ActiveWorkbook.SaveCopyAs(duongdan + tenTap + ".xlsx");
+            obj.ActiveWorkbook.Saved = true;
+        }
+        private void xuấtFileExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            export2Excel(dataGridView1, @"D:\", "dsNhanVien");
+            MessageBox.Show("Xuất file thành công ");
         }
     }
 }

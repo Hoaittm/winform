@@ -30,37 +30,35 @@
         {
             label6 = new Label();
             groupBox1 = new GroupBox();
-            cusButton2 = new HotelManage.Assets.CusButton();
             night = new TextBox();
             label5 = new Label();
-            datecheckout = new DateTimePicker();
+            ngaytra = new DateTimePicker();
             label4 = new Label();
-            datecheckin = new DateTimePicker();
+            ngaynhan = new DateTimePicker();
             label3 = new Label();
-            id = new TextBox();
+            maphong = new TextBox();
             label2 = new Label();
-            type = new ComboBox();
+            tenphong = new ComboBox();
             label1 = new Label();
             groupBox4 = new GroupBox();
-            cusButton3 = new HotelManage.Assets.CusButton();
-            cusButton1 = new HotelManage.Assets.CusButton();
+            dong = new HotelManage.Assets.CusButton();
+            diachi = new TextBox();
+            gioitinh = new TextBox();
+            quoctich = new TextBox();
             label14 = new Label();
-         
             label13 = new Label();
-        
-            phone = new TextBox();
+            dienthoai = new TextBox();
             label7 = new Label();
             label12 = new Label();
-            cccd = new TextBox();
+            cmnd = new TextBox();
             label11 = new Label();
-            dob = new DateTimePicker();
+            ngaysinh = new DateTimePicker();
             label8 = new Label();
-            name = new TextBox();
+            hoten = new TextBox();
             label9 = new Label();
-            comboBox2 = new ComboBox();
+            loaikhachhang = new ComboBox();
             label10 = new Label();
             txt_Exit = new Label();
-            country = new TextBox();
             groupBox1.SuspendLayout();
             groupBox4.SuspendLayout();
             SuspendLayout();
@@ -79,45 +77,26 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.ButtonHighlight;
-            groupBox1.Controls.Add(cusButton2);
             groupBox1.Controls.Add(night);
             groupBox1.Controls.Add(label5);
-            groupBox1.Controls.Add(datecheckout);
+            groupBox1.Controls.Add(ngaytra);
             groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(datecheckin);
+            groupBox1.Controls.Add(ngaynhan);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(id);
+            groupBox1.Controls.Add(maphong);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(type);
+            groupBox1.Controls.Add(tenphong);
             groupBox1.Controls.Add(label1);
             groupBox1.FlatStyle = FlatStyle.Flat;
             groupBox1.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox1.ForeColor = SystemColors.HotTrack;
             groupBox1.Location = new Point(12, 93);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(465, 797);
+            groupBox1.Size = new Size(465, 757);
             groupBox1.TabIndex = 15;
             groupBox1.TabStop = false;
             groupBox1.Text = "Thông tin nhận phòng";
             groupBox1.Enter += groupBox1_Enter;
-            // 
-            // cusButton2
-            // 
-            cusButton2.BackColor = SystemColors.ButtonHighlight;
-            cusButton2.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton2.BorderColor = SystemColors.HotTrack;
-            cusButton2.BorderRadius = 35;
-            cusButton2.BorderSize = 1;
-            cusButton2.FlatAppearance.BorderSize = 0;
-            cusButton2.FlatStyle = FlatStyle.Flat;
-            cusButton2.ForeColor = SystemColors.HotTrack;
-            cusButton2.Location = new Point(25, 693);
-            cusButton2.Name = "cusButton2";
-            cusButton2.Size = new Size(362, 68);
-            cusButton2.TabIndex = 30;
-            cusButton2.Text = "Lưu thay đổi";
-            cusButton2.TextColor = SystemColors.HotTrack;
-            cusButton2.UseVisualStyleBackColor = false;
             // 
             // night
             // 
@@ -136,14 +115,14 @@
             label5.TabIndex = 8;
             label5.Text = "Số đêm:";
             // 
-            // datecheckout
+            // ngaytra
             // 
-            datecheckout.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            datecheckout.Format = DateTimePickerFormat.Short;
-            datecheckout.Location = new Point(25, 483);
-            datecheckout.Name = "datecheckout";
-            datecheckout.Size = new Size(369, 43);
-            datecheckout.TabIndex = 7;
+            ngaytra.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ngaytra.Format = DateTimePickerFormat.Short;
+            ngaytra.Location = new Point(25, 483);
+            ngaytra.Name = "ngaytra";
+            ngaytra.Size = new Size(369, 43);
+            ngaytra.TabIndex = 7;
             // 
             // label4
             // 
@@ -155,18 +134,18 @@
             label4.TabIndex = 6;
             label4.Text = "Ngày trả: ";
             // 
-            // datecheckin
+            // ngaynhan
             // 
-            datecheckin.CalendarMonthBackground = SystemColors.ActiveCaption;
-            datecheckin.CalendarTrailingForeColor = SystemColors.GradientInactiveCaption;
-            datecheckin.Enabled = false;
-            datecheckin.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            datecheckin.Format = DateTimePickerFormat.Short;
-            datecheckin.ImeMode = ImeMode.On;
-            datecheckin.Location = new Point(25, 369);
-            datecheckin.Name = "datecheckin";
-            datecheckin.Size = new Size(369, 43);
-            datecheckin.TabIndex = 5;
+            ngaynhan.CalendarMonthBackground = SystemColors.ActiveCaption;
+            ngaynhan.CalendarTrailingForeColor = SystemColors.GradientInactiveCaption;
+            ngaynhan.Enabled = false;
+            ngaynhan.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ngaynhan.Format = DateTimePickerFormat.Short;
+            ngaynhan.ImeMode = ImeMode.On;
+            ngaynhan.Location = new Point(25, 369);
+            ngaynhan.Name = "ngaynhan";
+            ngaynhan.Size = new Size(369, 43);
+            ngaynhan.TabIndex = 5;
             // 
             // label3
             // 
@@ -178,12 +157,12 @@
             label3.TabIndex = 4;
             label3.Text = "Ngày nhận: ";
             // 
-            // id
+            // maphong
             // 
-            id.Location = new Point(28, 108);
-            id.Name = "id";
-            id.Size = new Size(370, 46);
-            id.TabIndex = 3;
+            maphong.Location = new Point(28, 108);
+            maphong.Name = "maphong";
+            maphong.Size = new Size(370, 46);
+            maphong.TabIndex = 3;
             // 
             // label2
             // 
@@ -195,14 +174,14 @@
             label2.TabIndex = 2;
             label2.Text = "Tên loại phòng:";
             // 
-            // type
+            // tenphong
             // 
-            type.FormattingEnabled = true;
-            type.Items.AddRange(new object[] { "Phòng Deluxe (DLX)", "Phòng Suite (SUT)", "Phòng Superior (SUP)", "Phòng Standard (STD)" });
-            type.Location = new Point(25, 233);
-            type.Name = "type";
-            type.Size = new Size(369, 48);
-            type.TabIndex = 1;
+            tenphong.FormattingEnabled = true;
+            tenphong.Items.AddRange(new object[] { "Phòng Deluxe (DLX)", "Phòng Suite (SUT)", "Phòng Superior (SUP)", "Phòng Standard (STD)" });
+            tenphong.Location = new Point(25, 233);
+            tenphong.Name = "tenphong";
+            tenphong.Size = new Size(369, 48);
+            tenphong.TabIndex = 1;
             // 
             // label1
             // 
@@ -217,69 +196,73 @@
             // groupBox4
             // 
             groupBox4.BackColor = SystemColors.ButtonHighlight;
-            groupBox4.Controls.Add(country);
-            groupBox4.Controls.Add(cusButton3);
-            groupBox4.Controls.Add(cusButton1);
+            groupBox4.Controls.Add(dong);
+            groupBox4.Controls.Add(diachi);
+            groupBox4.Controls.Add(gioitinh);
+            groupBox4.Controls.Add(quoctich);
             groupBox4.Controls.Add(label14);
-           
             groupBox4.Controls.Add(label13);
-         
-            groupBox4.Controls.Add(phone);
+            groupBox4.Controls.Add(dienthoai);
             groupBox4.Controls.Add(label7);
             groupBox4.Controls.Add(label12);
-            groupBox4.Controls.Add(cccd);
+            groupBox4.Controls.Add(cmnd);
             groupBox4.Controls.Add(label11);
-            groupBox4.Controls.Add(dob);
+            groupBox4.Controls.Add(ngaysinh);
             groupBox4.Controls.Add(label8);
-            groupBox4.Controls.Add(name);
+            groupBox4.Controls.Add(hoten);
             groupBox4.Controls.Add(label9);
-            groupBox4.Controls.Add(comboBox2);
+            groupBox4.Controls.Add(loaikhachhang);
             groupBox4.Controls.Add(label10);
             groupBox4.FlatStyle = FlatStyle.Flat;
             groupBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox4.ForeColor = SystemColors.HotTrack;
             groupBox4.Location = new Point(491, 93);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(893, 797);
+            groupBox4.Size = new Size(893, 757);
             groupBox4.TabIndex = 17;
             groupBox4.TabStop = false;
             groupBox4.Text = "Thông tin khách hàng";
+            groupBox4.Enter += groupBox4_Enter;
             // 
-            // cusButton3
+            // dong
             // 
-            cusButton3.BackColor = SystemColors.ButtonHighlight;
-            cusButton3.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton3.BorderColor = SystemColors.HotTrack;
-            cusButton3.BorderRadius = 35;
-            cusButton3.BorderSize = 1;
-            cusButton3.FlatAppearance.BorderSize = 0;
-            cusButton3.FlatStyle = FlatStyle.Flat;
-            cusButton3.ForeColor = SystemColors.HotTrack;
-            cusButton3.Location = new Point(460, 691);
-            cusButton3.Name = "cusButton3";
-            cusButton3.Size = new Size(369, 68);
-            cusButton3.TabIndex = 32;
-            cusButton3.Text = "Xóa khách hàng";
-            cusButton3.TextColor = SystemColors.HotTrack;
-            cusButton3.UseVisualStyleBackColor = false;
+            dong.BackColor = SystemColors.ButtonHighlight;
+            dong.BackgroundColor = SystemColors.ButtonHighlight;
+            dong.BorderColor = SystemColors.HotTrack;
+            dong.BorderRadius = 35;
+            dong.BorderSize = 1;
+            dong.FlatAppearance.BorderSize = 0;
+            dong.FlatStyle = FlatStyle.Flat;
+            dong.ForeColor = SystemColors.HotTrack;
+            dong.Location = new Point(455, 659);
+            dong.Name = "dong";
+            dong.Size = new Size(366, 77);
+            dong.TabIndex = 38;
+            dong.Text = "Đóng";
+            dong.TextColor = SystemColors.HotTrack;
+            dong.UseVisualStyleBackColor = false;
+            dong.Click += dong_Click;
             // 
-            // cusButton1
+            // diachi
             // 
-            cusButton1.BackColor = SystemColors.ButtonHighlight;
-            cusButton1.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton1.BorderColor = SystemColors.HotTrack;
-            cusButton1.BorderRadius = 35;
-            cusButton1.BorderSize = 1;
-            cusButton1.FlatAppearance.BorderSize = 0;
-            cusButton1.FlatStyle = FlatStyle.Flat;
-            cusButton1.ForeColor = SystemColors.HotTrack;
-            cusButton1.Location = new Point(35, 691);
-            cusButton1.Name = "cusButton1";
-            cusButton1.Size = new Size(369, 68);
-            cusButton1.TabIndex = 31;
-            cusButton1.Text = "Cập nhật khách hàng";
-            cusButton1.TextColor = SystemColors.HotTrack;
-            cusButton1.UseVisualStyleBackColor = false;
+            diachi.Location = new Point(460, 258);
+            diachi.Name = "diachi";
+            diachi.Size = new Size(370, 50);
+            diachi.TabIndex = 35;
+            // 
+            // gioitinh
+            // 
+            gioitinh.Location = new Point(460, 403);
+            gioitinh.Name = "gioitinh";
+            gioitinh.Size = new Size(370, 50);
+            gioitinh.TabIndex = 34;
+            // 
+            // quoctich
+            // 
+            quoctich.Location = new Point(460, 550);
+            quoctich.Name = "quoctich";
+            quoctich.Size = new Size(370, 50);
+            quoctich.TabIndex = 33;
             // 
             // label14
             // 
@@ -291,10 +274,6 @@
             label14.TabIndex = 16;
             label14.Text = "Quốc tịch:";
             // 
-            // gender
-            // 
-          
-            // 
             // label13
             // 
             label13.AutoSize = true;
@@ -305,16 +284,12 @@
             label13.TabIndex = 14;
             label13.Text = "GIới tính:";
             // 
-            // address
+            // dienthoai
             // 
-          
-            // 
-            // phone
-            // 
-            phone.Location = new Point(35, 550);
-            phone.Name = "phone";
-            phone.Size = new Size(370, 50);
-            phone.TabIndex = 13;
+            dienthoai.Location = new Point(35, 550);
+            dienthoai.Name = "dienthoai";
+            dienthoai.Size = new Size(370, 50);
+            dienthoai.TabIndex = 13;
             // 
             // label7
             // 
@@ -336,12 +311,12 @@
             label12.TabIndex = 12;
             label12.Text = "Số điện thoại:";
             // 
-            // cccd
+            // cmnd
             // 
-            cccd.Location = new Point(26, 258);
-            cccd.Name = "cccd";
-            cccd.Size = new Size(370, 50);
-            cccd.TabIndex = 11;
+            cmnd.Location = new Point(26, 258);
+            cmnd.Name = "cmnd";
+            cmnd.Size = new Size(370, 50);
+            cmnd.TabIndex = 11;
             // 
             // label11
             // 
@@ -353,14 +328,14 @@
             label11.TabIndex = 10;
             label11.Text = "Thẻ căn cước /CMND:";
             // 
-            // dob
+            // ngaysinh
             // 
-            dob.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dob.Format = DateTimePickerFormat.Short;
-            dob.Location = new Point(455, 131);
-            dob.Name = "dob";
-            dob.Size = new Size(374, 43);
-            dob.TabIndex = 5;
+            ngaysinh.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ngaysinh.Format = DateTimePickerFormat.Short;
+            ngaysinh.Location = new Point(455, 131);
+            ngaysinh.Name = "ngaysinh";
+            ngaysinh.Size = new Size(374, 43);
+            ngaysinh.TabIndex = 5;
             // 
             // label8
             // 
@@ -372,12 +347,12 @@
             label8.TabIndex = 4;
             label8.Text = "Ngày sinh:";
             // 
-            // name
+            // hoten
             // 
-            name.Location = new Point(26, 124);
-            name.Name = "name";
-            name.Size = new Size(370, 50);
-            name.TabIndex = 3;
+            hoten.Location = new Point(26, 124);
+            hoten.Name = "hoten";
+            hoten.Size = new Size(370, 50);
+            hoten.TabIndex = 3;
             // 
             // label9
             // 
@@ -389,14 +364,14 @@
             label9.TabIndex = 2;
             label9.Text = "Họ và tên:";
             // 
-            // comboBox2
+            // loaikhachhang
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Khách vãng lai", "Khách du lịch", "Khách địa phương", "Khách đi qua các tổ chức trung gian" });
-            comboBox2.Location = new Point(35, 403);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(369, 53);
-            comboBox2.TabIndex = 1;
+            loaikhachhang.FormattingEnabled = true;
+            loaikhachhang.Items.AddRange(new object[] { "Khách vãng lai", "Khách du lịch", "Khách địa phương", "Khách đi qua các tổ chức trung gian" });
+            loaikhachhang.Location = new Point(35, 403);
+            loaikhachhang.Name = "loaikhachhang";
+            loaikhachhang.Size = new Size(369, 53);
+            loaikhachhang.TabIndex = 1;
             // 
             // label10
             // 
@@ -420,18 +395,11 @@
             txt_Exit.Text = "X";
             txt_Exit.Click += txt_Exit_Click;
             // 
-            // country
-            // 
-            country.Location = new Point(460, 539);
-            country.Name = "country";
-            country.Size = new Size(370, 50);
-            country.TabIndex = 33;
-            // 
             // booking_details
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1404, 914);
+            ClientSize = new Size(1404, 864);
             Controls.Add(txt_Exit);
             Controls.Add(groupBox4);
             Controls.Add(groupBox1);
@@ -440,6 +408,7 @@
             Name = "booking_details";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "booking_details";
+            Load += booking_details_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox4.ResumeLayout(false);
@@ -452,13 +421,13 @@
 
         private Label label6;
         private GroupBox groupBox1;
-        private DateTimePicker datecheckout;
+        private DateTimePicker ngaytra;
         private Label label4;
-        private DateTimePicker datecheckin;
+        private DateTimePicker ngaynhan;
         private Label label3;
-        private TextBox id;
+        private TextBox maphong;
         private Label label2;
-        private ComboBox type;
+        private ComboBox tenphong;
         private Label label1;
         private TextBox night;
         private Label label5;
@@ -471,18 +440,23 @@
         private ComboBox comboBox3;
         private Label label13;
         private TextBox textBox6;
-        private TextBox phone;
+        private TextBox dienthoai;
         private Label label7;
         private Label label12;
-        private TextBox cccd;
+        private TextBox cmnd;
         private Label label11;
-        private DateTimePicker dob;
+        private DateTimePicker ngaysinh;
         private Label label8;
-        private TextBox name;
+        private TextBox hoten;
         private Label label9;
-        private ComboBox comboBox2;
+        private ComboBox loaikhachhang;
         private Label label10;
         private Label txt_Exit;
-        private TextBox country;
+        private TextBox quoctich;
+        private TextBox diachi;
+        private TextBox gioitinh;
+        private HotelManage.Assets.CusButton luuchitietdatphong;
+        private HotelManage.Assets.CusButton dong;
+        private HotelManage.Assets.CusButton capnhatkhachhangdatphong;
     }
 }

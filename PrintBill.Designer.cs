@@ -32,53 +32,59 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel1 = new Panel();
-            label41 = new Label();
+            label8 = new Label();
+            ngaylaphoadonnn = new Label();
+            tenkhachhang = new Label();
+            ngaylap = new Label();
+            tennhanvien = new Label();
+            mahoadon = new Label();
+            label45 = new Label();
+            tiendichvu = new Label();
             label42 = new Label();
-            label43 = new Label();
+            thanhtien = new Label();
             label44 = new Label();
-            label39 = new Label();
+            tienphong = new Label();
             label40 = new Label();
             label33 = new Label();
             label34 = new Label();
             label35 = new Label();
             label36 = new Label();
-            label37 = new Label();
+            tongtien = new Label();
             label38 = new Label();
             button3 = new Button();
             dataGridView1 = new DataGridView();
             button2 = new Button();
-            label31 = new Label();
+            tenphong = new Label();
             label32 = new Label();
-            label21 = new Label();
+            songuoi = new Label();
             label22 = new Label();
-            label23 = new Label();
+            sodem = new Label();
             label24 = new Label();
-            label25 = new Label();
+            ngayden = new Label();
             label26 = new Label();
-            label27 = new Label();
+            giaphong = new Label();
             label28 = new Label();
-            label29 = new Label();
+            loaiphong = new Label();
             label30 = new Label();
-            label19 = new Label();
+            quoctich = new Label();
             label20 = new Label();
-            label17 = new Label();
+            diachi = new Label();
             label18 = new Label();
-            label14 = new Label();
             label15 = new Label();
-            label12 = new Label();
+            dienthoai = new Label();
             label13 = new Label();
-            label16 = new Label();
+            cccd = new Label();
             label11 = new Label();
             label10 = new Label();
             button1 = new Button();
             label9 = new Label();
-            label8 = new Label();
+            labelNhanvien = new Label();
             label7 = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            cusButton3 = new HotelManage.Assets.CusButton();
+            nutinhoadon = new HotelManage.Assets.CusButton();
             cusButton1 = new HotelManage.Assets.CusButton();
             txt_Exit = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -121,47 +127,53 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ButtonHighlight;
-            panel1.Controls.Add(label41);
+            panel1.Controls.Add(label8);
+            panel1.Controls.Add(ngaylaphoadonnn);
+            panel1.Controls.Add(tenkhachhang);
+            panel1.Controls.Add(ngaylap);
+            panel1.Controls.Add(tennhanvien);
+            panel1.Controls.Add(mahoadon);
+            panel1.Controls.Add(label45);
+            panel1.Controls.Add(tiendichvu);
             panel1.Controls.Add(label42);
-            panel1.Controls.Add(label43);
+            panel1.Controls.Add(thanhtien);
             panel1.Controls.Add(label44);
-            panel1.Controls.Add(label39);
+            panel1.Controls.Add(tienphong);
             panel1.Controls.Add(label40);
             panel1.Controls.Add(label33);
             panel1.Controls.Add(label34);
             panel1.Controls.Add(label35);
             panel1.Controls.Add(label36);
-            panel1.Controls.Add(label37);
+            panel1.Controls.Add(tongtien);
             panel1.Controls.Add(label38);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(dataGridView1);
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(label31);
+            panel1.Controls.Add(tenphong);
             panel1.Controls.Add(label32);
-            panel1.Controls.Add(label21);
+            panel1.Controls.Add(songuoi);
             panel1.Controls.Add(label22);
-            panel1.Controls.Add(label23);
+            panel1.Controls.Add(sodem);
             panel1.Controls.Add(label24);
-            panel1.Controls.Add(label25);
+            panel1.Controls.Add(ngayden);
             panel1.Controls.Add(label26);
-            panel1.Controls.Add(label27);
+            panel1.Controls.Add(giaphong);
             panel1.Controls.Add(label28);
-            panel1.Controls.Add(label29);
+            panel1.Controls.Add(loaiphong);
             panel1.Controls.Add(label30);
-            panel1.Controls.Add(label19);
+            panel1.Controls.Add(quoctich);
             panel1.Controls.Add(label20);
-            panel1.Controls.Add(label17);
+            panel1.Controls.Add(diachi);
             panel1.Controls.Add(label18);
-            panel1.Controls.Add(label14);
             panel1.Controls.Add(label15);
-            panel1.Controls.Add(label12);
+            panel1.Controls.Add(dienthoai);
             panel1.Controls.Add(label13);
-            panel1.Controls.Add(label16);
+            panel1.Controls.Add(cccd);
             panel1.Controls.Add(label11);
             panel1.Controls.Add(label10);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label9);
-            panel1.Controls.Add(label8);
+            panel1.Controls.Add(labelNhanvien);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
@@ -174,15 +186,84 @@
             panel1.Size = new Size(1392, 1469);
             panel1.TabIndex = 31;
             // 
-            // label41
+            // label8
             // 
-            label41.AutoSize = true;
-            label41.Font = new Font("Segoe UI", 10F);
-            label41.Location = new Point(1065, 1337);
-            label41.Name = "label41";
-            label41.Size = new Size(150, 37);
-            label41.TabIndex = 82;
-            label41.Text = "1.000.000đ";
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 10F);
+            label8.Location = new Point(289, 635);
+            label8.Name = "label8";
+            label8.Size = new Size(26, 37);
+            label8.TabIndex = 89;
+            label8.Text = "t";
+            // 
+            // ngaylaphoadonnn
+            // 
+            ngaylaphoadonnn.AutoSize = true;
+            ngaylaphoadonnn.Font = new Font("Segoe UI", 10F);
+            ngaylaphoadonnn.Location = new Point(1026, 342);
+            ngaylaphoadonnn.Name = "ngaylaphoadonnn";
+            ngaylaphoadonnn.Size = new Size(26, 37);
+            ngaylaphoadonnn.TabIndex = 88;
+            ngaylaphoadonnn.Text = "t";
+            // 
+            // tenkhachhang
+            // 
+            tenkhachhang.AutoSize = true;
+            tenkhachhang.Font = new Font("Segoe UI", 10F);
+            tenkhachhang.Location = new Point(289, 426);
+            tenkhachhang.Name = "tenkhachhang";
+            tenkhachhang.Size = new Size(45, 37);
+            tenkhachhang.TabIndex = 87;
+            tenkhachhang.Text = "kh";
+            tenkhachhang.Click += tenkhachhang_Click;
+            // 
+            // ngaylap
+            // 
+            ngaylap.AutoSize = true;
+            ngaylap.Font = new Font("Segoe UI", 10F);
+            ngaylap.Location = new Point(1020, 342);
+            ngaylap.Name = "ngaylap";
+            ngaylap.Size = new Size(0, 37);
+            ngaylap.TabIndex = 86;
+            // 
+            // tennhanvien
+            // 
+            tennhanvien.AutoSize = true;
+            tennhanvien.Font = new Font("Segoe UI", 10F);
+            tennhanvien.Location = new Point(601, 342);
+            tennhanvien.Name = "tennhanvien";
+            tennhanvien.Size = new Size(26, 37);
+            tennhanvien.TabIndex = 85;
+            tennhanvien.Text = "t";
+            tennhanvien.Click += tennhanvien_Click;
+            // 
+            // mahoadon
+            // 
+            mahoadon.AutoSize = true;
+            mahoadon.Font = new Font("Segoe UI", 10F);
+            mahoadon.Location = new Point(219, 342);
+            mahoadon.Name = "mahoadon";
+            mahoadon.Size = new Size(0, 37);
+            mahoadon.TabIndex = 84;
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.Font = new Font("Segoe UI", 10F);
+            label45.Location = new Point(219, 342);
+            label45.Name = "label45";
+            label45.Size = new Size(0, 37);
+            label45.TabIndex = 83;
+            // 
+            // tiendichvu
+            // 
+            tiendichvu.AutoSize = true;
+            tiendichvu.Font = new Font("Segoe UI", 10F);
+            tiendichvu.Location = new Point(1065, 1337);
+            tiendichvu.Name = "tiendichvu";
+            tiendichvu.Size = new Size(150, 37);
+            tiendichvu.TabIndex = 82;
+            tiendichvu.Text = "1.000.000đ";
             // 
             // label42
             // 
@@ -194,15 +275,15 @@
             label42.TabIndex = 81;
             label42.Text = "Tiền dịch vụ:";
             // 
-            // label43
+            // thanhtien
             // 
-            label43.AutoSize = true;
-            label43.Font = new Font("Segoe UI", 10F);
-            label43.Location = new Point(1065, 1397);
-            label43.Name = "label43";
-            label43.Size = new Size(150, 37);
-            label43.TabIndex = 80;
-            label43.Text = "8.000.000đ";
+            thanhtien.AutoSize = true;
+            thanhtien.Font = new Font("Segoe UI", 10F);
+            thanhtien.Location = new Point(1065, 1397);
+            thanhtien.Name = "thanhtien";
+            thanhtien.Size = new Size(150, 37);
+            thanhtien.TabIndex = 80;
+            thanhtien.Text = "8.000.000đ";
             // 
             // label44
             // 
@@ -214,15 +295,15 @@
             label44.TabIndex = 79;
             label44.Text = "Thành tiền:";
             // 
-            // label39
+            // tienphong
             // 
-            label39.AutoSize = true;
-            label39.Font = new Font("Segoe UI", 10F);
-            label39.Location = new Point(250, 1337);
-            label39.Name = "label39";
-            label39.Size = new Size(150, 37);
-            label39.TabIndex = 78;
-            label39.Text = "7.000.000đ";
+            tienphong.AutoSize = true;
+            tienphong.Font = new Font("Segoe UI", 10F);
+            tienphong.Location = new Point(250, 1337);
+            tienphong.Name = "tienphong";
+            tienphong.Size = new Size(150, 37);
+            tienphong.TabIndex = 78;
+            tienphong.Text = "7.000.000đ";
             // 
             // label40
             // 
@@ -274,15 +355,15 @@
             label36.TabIndex = 73;
             label36.Text = "Giảm giá:";
             // 
-            // label37
+            // tongtien
             // 
-            label37.AutoSize = true;
-            label37.Font = new Font("Segoe UI", 10F);
-            label37.Location = new Point(249, 1397);
-            label37.Name = "label37";
-            label37.Size = new Size(150, 37);
-            label37.TabIndex = 72;
-            label37.Text = "8.000.000đ";
+            tongtien.AutoSize = true;
+            tongtien.Font = new Font("Segoe UI", 10F);
+            tongtien.Location = new Point(249, 1397);
+            tongtien.Name = "tongtien";
+            tongtien.Size = new Size(150, 37);
+            tongtien.TabIndex = 72;
+            tongtien.Text = "8.000.000đ";
             // 
             // label38
             // 
@@ -321,15 +402,15 @@
             button2.TabIndex = 67;
             button2.UseVisualStyleBackColor = false;
             // 
-            // label31
+            // tenphong
             // 
-            label31.AutoSize = true;
-            label31.Font = new Font("Segoe UI", 10F);
-            label31.Location = new Point(922, 426);
-            label31.Name = "label31";
-            label31.Size = new Size(146, 37);
-            label31.TabIndex = 66;
-            label31.Text = "Phòng 102";
+            tenphong.AutoSize = true;
+            tenphong.Font = new Font("Segoe UI", 10F);
+            tenphong.Location = new Point(922, 426);
+            tenphong.Name = "tenphong";
+            tenphong.Size = new Size(42, 37);
+            tenphong.TabIndex = 66;
+            tenphong.Text = "tp";
             // 
             // label32
             // 
@@ -341,15 +422,15 @@
             label32.TabIndex = 65;
             label32.Text = "Tên phòng:";
             // 
-            // label21
+            // songuoi
             // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Segoe UI", 10F);
-            label21.Location = new Point(922, 772);
-            label21.Name = "label21";
-            label21.Size = new Size(32, 37);
-            label21.TabIndex = 64;
-            label21.Text = "1";
+            songuoi.AutoSize = true;
+            songuoi.Font = new Font("Segoe UI", 10F);
+            songuoi.Location = new Point(922, 772);
+            songuoi.Name = "songuoi";
+            songuoi.Size = new Size(32, 37);
+            songuoi.TabIndex = 64;
+            songuoi.Text = "n";
             // 
             // label22
             // 
@@ -361,15 +442,15 @@
             label22.TabIndex = 63;
             label22.Text = "Số người: ";
             // 
-            // label23
+            // sodem
             // 
-            label23.AutoSize = true;
-            label23.Font = new Font("Segoe UI", 10F);
-            label23.Location = new Point(922, 703);
-            label23.Name = "label23";
-            label23.Size = new Size(32, 37);
-            label23.TabIndex = 62;
-            label23.Text = "1";
+            sodem.AutoSize = true;
+            sodem.Font = new Font("Segoe UI", 10F);
+            sodem.Location = new Point(922, 703);
+            sodem.Name = "sodem";
+            sodem.Size = new Size(33, 37);
+            sodem.TabIndex = 62;
+            sodem.Text = "d";
             // 
             // label24
             // 
@@ -381,15 +462,15 @@
             label24.TabIndex = 61;
             label24.Text = "Số đêm: ";
             // 
-            // label25
+            // ngayden
             // 
-            label25.AutoSize = true;
-            label25.Font = new Font("Segoe UI", 10F);
-            label25.Location = new Point(922, 635);
-            label25.Name = "label25";
-            label25.Size = new Size(159, 37);
-            label25.TabIndex = 60;
-            label25.Text = "10/19/2022";
+            ngayden.AutoSize = true;
+            ngayden.Font = new Font("Segoe UI", 10F);
+            ngayden.Location = new Point(922, 635);
+            ngayden.Name = "ngayden";
+            ngayden.Size = new Size(48, 37);
+            ngayden.TabIndex = 60;
+            ngayden.Text = "nd";
             // 
             // label26
             // 
@@ -401,15 +482,15 @@
             label26.TabIndex = 59;
             label26.Text = "Ngày đến: ";
             // 
-            // label27
+            // giaphong
             // 
-            label27.AutoSize = true;
-            label27.Font = new Font("Segoe UI", 10F);
-            label27.Location = new Point(922, 564);
-            label27.Name = "label27";
-            label27.Size = new Size(150, 37);
-            label27.TabIndex = 58;
-            label27.Text = "7.000.000đ";
+            giaphong.AutoSize = true;
+            giaphong.Font = new Font("Segoe UI", 10F);
+            giaphong.Location = new Point(922, 564);
+            giaphong.Name = "giaphong";
+            giaphong.Size = new Size(49, 37);
+            giaphong.TabIndex = 58;
+            giaphong.Text = "dg";
             // 
             // label28
             // 
@@ -421,15 +502,15 @@
             label28.TabIndex = 57;
             label28.Text = "Đơn giá: ";
             // 
-            // label29
+            // loaiphong
             // 
-            label29.AutoSize = true;
-            label29.Font = new Font("Segoe UI", 10F);
-            label29.Location = new Point(922, 486);
-            label29.Name = "label29";
-            label29.Size = new Size(253, 37);
-            label29.TabIndex = 56;
-            label29.Text = "Phòng Deluxe (DLX)";
+            loaiphong.AutoSize = true;
+            loaiphong.Font = new Font("Segoe UI", 10F);
+            loaiphong.Location = new Point(922, 486);
+            loaiphong.Name = "loaiphong";
+            loaiphong.Size = new Size(40, 37);
+            loaiphong.TabIndex = 56;
+            loaiphong.Text = "lp";
             // 
             // label30
             // 
@@ -441,15 +522,15 @@
             label30.TabIndex = 55;
             label30.Text = "Loại phòng: ";
             // 
-            // label19
+            // quoctich
             // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI", 10F);
-            label19.Location = new Point(289, 772);
-            label19.Name = "label19";
-            label19.Size = new Size(128, 37);
-            label19.TabIndex = 53;
-            label19.Text = "Việt Nam";
+            quoctich.AutoSize = true;
+            quoctich.Font = new Font("Segoe UI", 10F);
+            quoctich.Location = new Point(289, 772);
+            quoctich.Name = "quoctich";
+            quoctich.Size = new Size(42, 37);
+            quoctich.TabIndex = 53;
+            quoctich.Text = "qt";
             // 
             // label20
             // 
@@ -461,15 +542,15 @@
             label20.TabIndex = 52;
             label20.Text = "Quốc tịch: ";
             // 
-            // label17
+            // diachi
             // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 10F);
-            label17.Location = new Point(289, 703);
-            label17.Name = "label17";
-            label17.Size = new Size(242, 37);
-            label17.TabIndex = 51;
-            label17.Text = "Cẩm Mỹ, Đồng Nai";
+            diachi.AutoSize = true;
+            diachi.Font = new Font("Segoe UI", 10F);
+            diachi.Location = new Point(289, 703);
+            diachi.Name = "diachi";
+            diachi.Size = new Size(45, 37);
+            diachi.TabIndex = 51;
+            diachi.Text = "dc";
             // 
             // label18
             // 
@@ -481,16 +562,6 @@
             label18.TabIndex = 50;
             label18.Text = "Địa chỉ: ";
             // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 10F);
-            label14.Location = new Point(289, 635);
-            label14.Name = "label14";
-            label14.Size = new Size(189, 37);
-            label14.TabIndex = 49;
-            label14.Text = "Khách vãng lai";
-            // 
             // label15
             // 
             label15.AutoSize = true;
@@ -501,15 +572,15 @@
             label15.TabIndex = 48;
             label15.Text = "Loại khách hàng:";
             // 
-            // label12
+            // dienthoai
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 10F);
-            label12.Location = new Point(289, 564);
-            label12.Name = "label12";
-            label12.Size = new Size(137, 37);
-            label12.TabIndex = 47;
-            label12.Text = "12345678";
+            dienthoai.AutoSize = true;
+            dienthoai.Font = new Font("Segoe UI", 10F);
+            dienthoai.Location = new Point(289, 564);
+            dienthoai.Name = "dienthoai";
+            dienthoai.Size = new Size(33, 37);
+            dienthoai.TabIndex = 47;
+            dienthoai.Text = "p";
             // 
             // label13
             // 
@@ -521,15 +592,15 @@
             label13.TabIndex = 46;
             label13.Text = "Số điện thoại:";
             // 
-            // label16
+            // cccd
             // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI", 10F);
-            label16.Location = new Point(289, 486);
-            label16.Name = "label16";
-            label16.Size = new Size(137, 37);
-            label16.TabIndex = 45;
-            label16.Text = "12345678";
+            cccd.AutoSize = true;
+            cccd.Font = new Font("Segoe UI", 10F);
+            cccd.Location = new Point(289, 486);
+            cccd.Name = "cccd";
+            cccd.Size = new Size(69, 37);
+            cccd.TabIndex = 45;
+            cccd.Text = "cccd";
             // 
             // label11
             // 
@@ -547,9 +618,9 @@
             label10.Font = new Font("Segoe UI", 10F);
             label10.Location = new Point(58, 426);
             label10.Name = "label10";
-            label10.Size = new Size(342, 37);
+            label10.Size = new Size(206, 37);
             label10.TabIndex = 39;
-            label10.Text = "Nhân viên lập: Nguyễn Đậu";
+            label10.Text = "Tên khách hàng:";
             // 
             // button1
             // 
@@ -566,19 +637,19 @@
             label9.Font = new Font("Segoe UI", 10F);
             label9.Location = new Point(893, 342);
             label9.Name = "label9";
-            label9.Size = new Size(388, 37);
+            label9.Size = new Size(137, 37);
             label9.TabIndex = 37;
-            label9.Text = "Ngày lập: 10/10/2024 13:50:00";
+            label9.Text = "Ngày lập: ";
             // 
-            // label8
+            // labelNhanvien
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 10F);
-            label8.Location = new Point(421, 342);
-            label8.Name = "label8";
-            label8.Size = new Size(362, 37);
-            label8.TabIndex = 36;
-            label8.Text = "Nhân viên lập: Nguyễn Văn A";
+            labelNhanvien.AutoSize = true;
+            labelNhanvien.Font = new Font("Segoe UI", 10F);
+            labelNhanvien.Location = new Point(421, 342);
+            labelNhanvien.Name = "labelNhanvien";
+            labelNhanvien.Size = new Size(194, 37);
+            labelNhanvien.TabIndex = 36;
+            labelNhanvien.Text = "Nhân viên lập: ";
             // 
             // label7
             // 
@@ -586,9 +657,9 @@
             label7.Font = new Font("Segoe UI", 10F);
             label7.Location = new Point(58, 342);
             label7.Name = "label7";
-            label7.Size = new Size(234, 37);
+            label7.Size = new Size(174, 37);
             label7.TabIndex = 35;
-            label7.Text = "Mã hóa đơn: 3027";
+            label7.Text = "Mã hóa đơn: ";
             // 
             // label5
             // 
@@ -631,23 +702,24 @@
             label2.TabIndex = 31;
             label2.Text = "Address: The Sheraton Saigon, Dong Khoi Ward, District 1, Ho Chi Minh City.";
             // 
-            // cusButton3
+            // nutinhoadon
             // 
-            cusButton3.BackColor = SystemColors.ButtonHighlight;
-            cusButton3.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton3.BorderColor = SystemColors.HotTrack;
-            cusButton3.BorderRadius = 35;
-            cusButton3.BorderSize = 1;
-            cusButton3.FlatAppearance.BorderSize = 0;
-            cusButton3.FlatStyle = FlatStyle.Flat;
-            cusButton3.ForeColor = SystemColors.HotTrack;
-            cusButton3.Location = new Point(136, 1610);
-            cusButton3.Name = "cusButton3";
-            cusButton3.Size = new Size(410, 63);
-            cusButton3.TabIndex = 32;
-            cusButton3.Text = "In hoá đơn";
-            cusButton3.TextColor = SystemColors.HotTrack;
-            cusButton3.UseVisualStyleBackColor = false;
+            nutinhoadon.BackColor = SystemColors.ButtonHighlight;
+            nutinhoadon.BackgroundColor = SystemColors.ButtonHighlight;
+            nutinhoadon.BorderColor = SystemColors.HotTrack;
+            nutinhoadon.BorderRadius = 35;
+            nutinhoadon.BorderSize = 1;
+            nutinhoadon.FlatAppearance.BorderSize = 0;
+            nutinhoadon.FlatStyle = FlatStyle.Flat;
+            nutinhoadon.ForeColor = SystemColors.HotTrack;
+            nutinhoadon.Location = new Point(136, 1610);
+            nutinhoadon.Name = "nutinhoadon";
+            nutinhoadon.Size = new Size(410, 63);
+            nutinhoadon.TabIndex = 32;
+            nutinhoadon.Text = "In hoá đơn";
+            nutinhoadon.TextColor = SystemColors.HotTrack;
+            nutinhoadon.UseVisualStyleBackColor = false;
+            nutinhoadon.Click += nutinhoadon_Click;
             // 
             // cusButton1
             // 
@@ -666,6 +738,7 @@
             cusButton1.Text = "Đóng";
             cusButton1.TextColor = SystemColors.HotTrack;
             cusButton1.UseVisualStyleBackColor = false;
+            cusButton1.Click += cusButton1_Click;
             // 
             // txt_Exit
             // 
@@ -686,7 +759,7 @@
             ClientSize = new Size(1438, 1694);
             Controls.Add(txt_Exit);
             Controls.Add(cusButton1);
-            Controls.Add(cusButton3);
+            Controls.Add(nutinhoadon);
             Controls.Add(panel1);
             Controls.Add(label6);
             FormBorderStyle = FormBorderStyle.None;
@@ -716,45 +789,51 @@
         private Label label10;
         private Button button1;
         private Label label9;
-        private Label label8;
-        private Label label21;
+        private Label labelNhanvien;
+        private Label songuoi;
         private Label label22;
-        private Label label23;
+        private Label sodem;
         private Label label24;
-        private Label label25;
+        private Label ngayden;
         private Label label26;
-        private Label label27;
+        private Label giaphong;
         private Label label28;
-        private Label label29;
+        private Label loaiphong;
         private Label label30;
-        private Label label19;
+        private Label quoctich;
         private Label label20;
-        private Label label17;
+        private Label diachi;
         private Label label18;
-        private Label label14;
         private Label label15;
-        private Label label12;
+        private Label dienthoai;
         private Label label13;
-        private Label label16;
-        private Label label41;
+        private Label cccd;
+        private Label tiendichvu;
         private Label label42;
-        private Label label43;
+        private Label thanhtien;
         private Label label44;
-        private Label label39;
+        private Label tienphong;
         private Label label40;
         private Label label33;
         private Label label34;
         private Label label35;
         private Label label36;
-        private Label label37;
+        private Label tongtien;
         private Label label38;
         private Button button3;
         private DataGridView dataGridView1;
         private Button button2;
-        private Label label31;
+        private Label tenphong;
         private Label label32;
-        private HotelManage.Assets.CusButton cusButton3;
+        private HotelManage.Assets.CusButton nutinhoadon;
         private HotelManage.Assets.CusButton cusButton1;
         private Label txt_Exit;
+        private Label label45;
+        private Label mahoadon;
+        private Label tenkhachhang;
+        private Label ngaylap;
+        private Label tennhanvien;
+        private Label ngaylaphoadonnn;
+        private Label label8;
     }
 }

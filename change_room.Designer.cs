@@ -30,21 +30,21 @@
         {
             label6 = new Label();
             groupBox1 = new GroupBox();
-            comboBox2 = new ComboBox();
+            phongtrongdoiphong = new ComboBox();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            loaiphongtrongdoiphong = new ComboBox();
             label1 = new Label();
             groupBox5 = new GroupBox();
-            cusButton2 = new HotelManage.Assets.CusButton();
-            cusButton1 = new HotelManage.Assets.CusButton();
+            dongdoiphong = new HotelManage.Assets.CusButton();
+            luudoiphong = new HotelManage.Assets.CusButton();
             groupBox2 = new GroupBox();
-            textBox3 = new TextBox();
+            giatrongdoiphong = new TextBox();
             label3 = new Label();
-            textBox4 = new TextBox();
+            soluongnguoitoida = new TextBox();
             label4 = new Label();
-            textBox2 = new TextBox();
+            tenloaiphongtrongdoiphong = new TextBox();
             label5 = new Label();
-            textBox1 = new TextBox();
+            tenphongtrongdoiphong = new TextBox();
             label7 = new Label();
             txt_Exit = new Label();
             groupBox1.SuspendLayout();
@@ -67,9 +67,9 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.ButtonHighlight;
-            groupBox1.Controls.Add(comboBox2);
+            groupBox1.Controls.Add(phongtrongdoiphong);
             groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(comboBox1);
+            groupBox1.Controls.Add(loaiphongtrongdoiphong);
             groupBox1.Controls.Add(label1);
             groupBox1.FlatStyle = FlatStyle.Flat;
             groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -81,14 +81,14 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Danh sách phòng trống";
             // 
-            // comboBox2
+            // phongtrongdoiphong
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Phòng Suite (SUT)", "Phòng Deluxe (DLX)", "Phòng Superior (SUP)", "Phòng Standard (STD)" });
-            comboBox2.Location = new Point(25, 218);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(471, 53);
-            comboBox2.TabIndex = 3;
+            phongtrongdoiphong.FormattingEnabled = true;
+            phongtrongdoiphong.Location = new Point(25, 218);
+            phongtrongdoiphong.Name = "phongtrongdoiphong";
+            phongtrongdoiphong.Size = new Size(471, 53);
+            phongtrongdoiphong.TabIndex = 3;
+            phongtrongdoiphong.SelectedIndexChanged += phongtrongdoiphong_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -100,14 +100,15 @@
             label2.TabIndex = 2;
             label2.Text = "Phòng:";
             // 
-            // comboBox1
+            // loaiphongtrongdoiphong
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Phòng Suite (SUT)", "Phòng Deluxe (DLX)", "Phòng Superior (SUP)", "Phòng Standard (STD)" });
-            comboBox1.Location = new Point(25, 94);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(471, 53);
-            comboBox1.TabIndex = 1;
+            loaiphongtrongdoiphong.FormattingEnabled = true;
+            loaiphongtrongdoiphong.Items.AddRange(new object[] { "Phòng Suite (SUT)", "Phòng Deluxe (DLX)", "Phòng Superior (SUP)", "Phòng Standard (STD)" });
+            loaiphongtrongdoiphong.Location = new Point(25, 94);
+            loaiphongtrongdoiphong.Name = "loaiphongtrongdoiphong";
+            loaiphongtrongdoiphong.Size = new Size(471, 53);
+            loaiphongtrongdoiphong.TabIndex = 1;
+            loaiphongtrongdoiphong.SelectedIndexChanged += loaiphongtrongdoiphong_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -122,8 +123,8 @@
             // groupBox5
             // 
             groupBox5.BackColor = SystemColors.ButtonHighlight;
-            groupBox5.Controls.Add(cusButton2);
-            groupBox5.Controls.Add(cusButton1);
+            groupBox5.Controls.Add(dongdoiphong);
+            groupBox5.Controls.Add(luudoiphong);
             groupBox5.FlatStyle = FlatStyle.Flat;
             groupBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox5.ForeColor = SystemColors.HotTrack;
@@ -134,53 +135,54 @@
             groupBox5.TabStop = false;
             groupBox5.Text = "Chức năng";
             // 
-            // cusButton2
+            // dongdoiphong
             // 
-            cusButton2.BackColor = SystemColors.ButtonHighlight;
-            cusButton2.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton2.BorderColor = SystemColors.HotTrack;
-            cusButton2.BorderRadius = 35;
-            cusButton2.BorderSize = 1;
-            cusButton2.FlatAppearance.BorderSize = 0;
-            cusButton2.FlatStyle = FlatStyle.Flat;
-            cusButton2.ForeColor = SystemColors.HotTrack;
-            cusButton2.Location = new Point(28, 201);
-            cusButton2.Name = "cusButton2";
-            cusButton2.Size = new Size(468, 78);
-            cusButton2.TabIndex = 34;
-            cusButton2.Text = "Đóng";
-            cusButton2.TextColor = SystemColors.HotTrack;
-            cusButton2.UseVisualStyleBackColor = false;
-            cusButton2.Click += cusButton2_Click;
+            dongdoiphong.BackColor = SystemColors.ButtonHighlight;
+            dongdoiphong.BackgroundColor = SystemColors.ButtonHighlight;
+            dongdoiphong.BorderColor = SystemColors.HotTrack;
+            dongdoiphong.BorderRadius = 35;
+            dongdoiphong.BorderSize = 1;
+            dongdoiphong.FlatAppearance.BorderSize = 0;
+            dongdoiphong.FlatStyle = FlatStyle.Flat;
+            dongdoiphong.ForeColor = SystemColors.HotTrack;
+            dongdoiphong.Location = new Point(28, 203);
+            dongdoiphong.Name = "dongdoiphong";
+            dongdoiphong.Size = new Size(468, 78);
+            dongdoiphong.TabIndex = 34;
+            dongdoiphong.Text = "Đóng";
+            dongdoiphong.TextColor = SystemColors.HotTrack;
+            dongdoiphong.UseVisualStyleBackColor = false;
+            dongdoiphong.Click += dongdoiphong_Click;
             // 
-            // cusButton1
+            // luudoiphong
             // 
-            cusButton1.BackColor = SystemColors.ButtonHighlight;
-            cusButton1.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton1.BorderColor = SystemColors.HotTrack;
-            cusButton1.BorderRadius = 35;
-            cusButton1.BorderSize = 1;
-            cusButton1.FlatAppearance.BorderSize = 0;
-            cusButton1.FlatStyle = FlatStyle.Flat;
-            cusButton1.ForeColor = SystemColors.HotTrack;
-            cusButton1.Location = new Point(28, 85);
-            cusButton1.Name = "cusButton1";
-            cusButton1.Size = new Size(468, 78);
-            cusButton1.TabIndex = 33;
-            cusButton1.Text = "Lưu thay đổi";
-            cusButton1.TextColor = SystemColors.HotTrack;
-            cusButton1.UseVisualStyleBackColor = false;
+            luudoiphong.BackColor = SystemColors.ButtonHighlight;
+            luudoiphong.BackgroundColor = SystemColors.ButtonHighlight;
+            luudoiphong.BorderColor = SystemColors.HotTrack;
+            luudoiphong.BorderRadius = 35;
+            luudoiphong.BorderSize = 1;
+            luudoiphong.FlatAppearance.BorderSize = 0;
+            luudoiphong.FlatStyle = FlatStyle.Flat;
+            luudoiphong.ForeColor = SystemColors.HotTrack;
+            luudoiphong.Location = new Point(28, 85);
+            luudoiphong.Name = "luudoiphong";
+            luudoiphong.Size = new Size(468, 78);
+            luudoiphong.TabIndex = 33;
+            luudoiphong.Text = "Lưu thay đổi";
+            luudoiphong.TextColor = SystemColors.HotTrack;
+            luudoiphong.UseVisualStyleBackColor = false;
+            luudoiphong.Click += luudoiphong_Click;
             // 
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.ButtonHighlight;
-            groupBox2.Controls.Add(textBox3);
+            groupBox2.Controls.Add(giatrongdoiphong);
             groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(textBox4);
+            groupBox2.Controls.Add(soluongnguoitoida);
             groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(textBox2);
+            groupBox2.Controls.Add(tenloaiphongtrongdoiphong);
             groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(textBox1);
+            groupBox2.Controls.Add(tenphongtrongdoiphong);
             groupBox2.Controls.Add(label7);
             groupBox2.FlatStyle = FlatStyle.Flat;
             groupBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -192,12 +194,12 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Thông tin nhận phòng";
             // 
-            // textBox3
+            // giatrongdoiphong
             // 
-            textBox3.Location = new Point(27, 504);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(468, 50);
-            textBox3.TabIndex = 13;
+            giatrongdoiphong.Location = new Point(27, 504);
+            giatrongdoiphong.Name = "giatrongdoiphong";
+            giatrongdoiphong.Size = new Size(468, 50);
+            giatrongdoiphong.TabIndex = 13;
             // 
             // label3
             // 
@@ -209,12 +211,12 @@
             label3.TabIndex = 12;
             label3.Text = "Giá:";
             // 
-            // textBox4
+            // soluongnguoitoida
             // 
-            textBox4.Location = new Point(30, 377);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(468, 50);
-            textBox4.TabIndex = 11;
+            soluongnguoitoida.Location = new Point(30, 377);
+            soluongnguoitoida.Name = "soluongnguoitoida";
+            soluongnguoitoida.Size = new Size(468, 50);
+            soluongnguoitoida.TabIndex = 11;
             // 
             // label4
             // 
@@ -226,12 +228,12 @@
             label4.TabIndex = 10;
             label4.Text = "Số lượng người tối đa:";
             // 
-            // textBox2
+            // tenloaiphongtrongdoiphong
             // 
-            textBox2.Location = new Point(30, 243);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(468, 50);
-            textBox2.TabIndex = 9;
+            tenloaiphongtrongdoiphong.Location = new Point(30, 243);
+            tenloaiphongtrongdoiphong.Name = "tenloaiphongtrongdoiphong";
+            tenloaiphongtrongdoiphong.Size = new Size(468, 50);
+            tenloaiphongtrongdoiphong.TabIndex = 9;
             // 
             // label5
             // 
@@ -243,12 +245,13 @@
             label5.TabIndex = 8;
             label5.Text = "Tên loại phòng:";
             // 
-            // textBox1
+            // tenphongtrongdoiphong
             // 
-            textBox1.Location = new Point(27, 117);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(468, 50);
-            textBox1.TabIndex = 3;
+            tenphongtrongdoiphong.Location = new Point(27, 117);
+            tenphongtrongdoiphong.Name = "tenphongtrongdoiphong";
+            tenphongtrongdoiphong.Size = new Size(468, 50);
+            tenphongtrongdoiphong.TabIndex = 3;
+            tenphongtrongdoiphong.TextChanged += tenphongtrongdoiphong_TextChanged;
             // 
             // label7
             // 
@@ -299,23 +302,23 @@
 
         private Label label6;
         private GroupBox groupBox1;
-        private ComboBox comboBox2;
+        private ComboBox phongtrongdoiphong;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox loaiphongtrongdoiphong;
         private Label label1;
         private GroupBox groupBox5;
-        private HotelManage.Assets.CusButton cusButton2;
-        private HotelManage.Assets.CusButton cusButton1;
+        private HotelManage.Assets.CusButton luudoiphong;
         private GroupBox groupBox2;
-        private TextBox textBox2;
+        private TextBox tenloaiphongtrongdoiphong;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox tenphongtrongdoiphong;
         private Label label7;
-        private TextBox textBox3;
+        private TextBox giatrongdoiphong;
         private Label label3;
-        private TextBox textBox4;
+        private TextBox soluongnguoitoida;
         private Label label4;
         private Label label15;
         private Label txt_Exit;
+        private HotelManage.Assets.CusButton dongdoiphong;
     }
 }

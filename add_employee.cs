@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace HotelManagementSystem
 {
     public partial class add_employee : Form
@@ -33,7 +34,7 @@ namespace HotelManagementSystem
 
         private void cusButton1_Click(object sender, EventArgs e)
         {
-            // Create a new employee instance with the input data
+            
             var employee = new Employee
             {
                 Username = username.Text,
@@ -47,22 +48,57 @@ namespace HotelManagementSystem
                 GioiTinh = gender.Text,
             };
 
-            // Insert employee into the database
+          
             InsertemployeeIntoDatabase(employee);
 
-            // Add the employee to the employee_Manage form
-            employeeemployee.AddEmployee(employee); // Update employee list in parent form
+           
+            employeeemployee.AddEmployee(employee);
 
-            ClearInputs(); // Clear input fields after adding
+            ClearInputs();
         }
 
         private void InsertemployeeIntoDatabase(Employee employee)
         {
             string connectionString = "Data Source=DESKTOP-QSUMM6P\\SQLEXPRESS;Initial Catalog=TranThiMinhHoai_winform;Integrated Security=True;TrustServerCertificate=True;";
+
+          
+            string defaultPassword = "123456";
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(defaultPassword);
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO employee (name, dob, cccd, phone, type, gender, address, username, startingDate) " +
-                               "VALUES (@name, @dob, @cccd, @phone, @type, @gender, @address, @username, @startingDate)";
+                connection.Open();
+
+               
+                string checkCccdQuery = "SELECT COUNT(*) FROM employee WHERE cccd = @cccd";
+                using (SqlCommand checkCccdCommand = new SqlCommand(checkCccdQuery, connection))
+                {
+                    checkCccdCommand.Parameters.AddWithValue("@cccd", employee.Cccd);
+                    int cccdCount = (int)checkCccdCommand.ExecuteScalar();
+
+                    if (cccdCount > 0)
+                    {
+                        MessageBox.Show("Số CCCD đã tồn tại. Vui lòng kiểm tra lại.");
+                        return;
+                    }
+                }
+
+                string checkPhoneQuery = "SELECT COUNT(*) FROM employee WHERE phone = @phone";
+                using (SqlCommand checkPhoneCommand = new SqlCommand(checkPhoneQuery, connection))
+                {
+                    checkPhoneCommand.Parameters.AddWithValue("@phone", employee.DienThoai);
+                    int phoneCount = (int)checkPhoneCommand.ExecuteScalar();
+
+                    if (phoneCount > 0)
+                    {
+                        MessageBox.Show("Số điện thoại đã tồn tại. Vui lòng kiểm tra lại.");
+                        return; 
+                    }
+                }
+
+             
+                string query = "INSERT INTO employee (name, dob, cccd, phone, type, gender, address, username, startingDate, password) " +
+                               "VALUES (@name, @dob, @cccd, @phone, @type, @gender, @address, @username, @startingDate, @password)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -75,24 +111,26 @@ namespace HotelManagementSystem
                     command.Parameters.AddWithValue("@gender", employee.GioiTinh);
                     command.Parameters.AddWithValue("@startingDate", employee.Ngayvaolam);
                     command.Parameters.AddWithValue("@username", employee.Username);
+                    command.Parameters.AddWithValue("@password", hashedPassword); 
 
                     try
                     {
-                        connection.Open();
                         int result = command.ExecuteNonQuery();
 
                         if (result > 0)
                         {
-                            MessageBox.Show("Employee added successfully!");
+                            MessageBox.Show("Thêm thành công với mật khẩu mặc định là: 123456");
+                            this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("Failed to add employee.");
+                            MessageBox.Show("Thêm nhân viên không thành công.");
+                           
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error: " + ex.Message);
+                        MessageBox.Show("Lỗi: " + ex.Message);
                     }
                 }
             }
@@ -101,7 +139,7 @@ namespace HotelManagementSystem
 
         private void ClearInputs()
         {
-            // Clear the input fields
+            
 
             name.Clear();
             cccd.Clear();
@@ -115,6 +153,16 @@ namespace HotelManagementSystem
         private void cusButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
     public class Employee

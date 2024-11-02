@@ -18,7 +18,7 @@ namespace HotelManagementSystem
     {
         private customer_manage customerManage;
 
-        // Constructor that accepts a customer_manage form instance
+       
         public add_user(customer_manage form)
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace HotelManagementSystem
 
         private void cusButton1_Click(object sender, EventArgs e)
         {
-            // Create a new Customer instance with the input data
+            
             var customer = new Customer
             {
 
@@ -48,54 +48,91 @@ namespace HotelManagementSystem
                 QuocTich = country.Text,
             };
 
-            // Insert customer into the database
+           
             InsertCustomerIntoDatabase(customer);
 
-            // Add the customer to the Customer_Manage form
+            
             customerManage.AddCustomer(customer);
+          
             ClearInputs();
         }
 
         private void InsertCustomerIntoDatabase(Customer customer)
         {
             string connectionString = "Data Source=DESKTOP-QSUMM6P\\SQLEXPRESS;Initial Catalog=TranThiMinhHoai_winform;Integrated Security=True;TrustServerCertificate=True;";
+
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO customer ( name, dob, cccd, address,type,phone,gender,country) " +
-                               "VALUES ( @name, @dob, @cccd, @address, @type, @phone,@gender, @country)";
+                
+                string checkCccdQuery = "SELECT COUNT(*) FROM customer WHERE cccd = @cccd";
+                using (SqlCommand checkCccdCommand = new SqlCommand(checkCccdQuery, connection))
+                {
+                    checkCccdCommand.Parameters.AddWithValue("@cccd", customer.Cccd);
+
+                    try
+                    {
+                        connection.Open();
+                        int cccdCount = (int)checkCccdCommand.ExecuteScalar(); 
+
+                        if (cccdCount > 0)
+                        {
+                            MessageBox.Show("Số CCCD đã tồn tại. Vui lòng kiểm tra lại.");
+                            return; 
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi kiểm tra số CCCD: " + ex.Message);
+                        return; 
+                    }
+                }
+
+     
+                string checkPhoneQuery = "SELECT COUNT(*) FROM customer WHERE phone = @phone";
+                using (SqlCommand checkPhoneCommand = new SqlCommand(checkPhoneQuery, connection))
+                {
+                    checkPhoneCommand.Parameters.AddWithValue("@phone", customer.DienThoai);
+
+                    try
+                    {
+                        int phoneCount = (int)checkPhoneCommand.ExecuteScalar(); 
+
+                        if (phoneCount > 0)
+                        {
+                            MessageBox.Show("Số điện thoại đã tồn tại. Vui lòng kiểm tra lại.");
+                            return;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi kiểm tra số điện thoại: " + ex.Message);
+                        return; 
+                    }
+                }
+
+              
+                string query = "INSERT INTO customer (name, dob, cccd, address, type, phone, gender, country) " +
+                               "VALUES (@name, @dob, @cccd, @address, @type, @phone, @gender, @country)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-
                     command.Parameters.AddWithValue("@name", customer.Ten);
                     command.Parameters.AddWithValue("@dob", customer.Ngaysinh);
                     command.Parameters.AddWithValue("@cccd", customer.Cccd);
                     command.Parameters.AddWithValue("@address", customer.DiaChi);
                     command.Parameters.AddWithValue("@type", customer.LoaiPhong);
                     command.Parameters.AddWithValue("@phone", customer.DienThoai);
-
                     command.Parameters.AddWithValue("@gender", customer.GioiTinh);
-
                     command.Parameters.AddWithValue("@country", customer.QuocTich);
 
                     try
                     {
-                        connection.Open();
                         int result = command.ExecuteNonQuery();
-
-                        // Check if insert was successful
-                        //if (result > 0)
-                        //{
-                        //    MessageBox.Show("Customer added successfully!");
-                        //}
-                        //else
-                        //{
-                        //    MessageBox.Show("Failed to add customer.");
-                        //}
+                        MessageBox.Show("Khách hàng đã được thêm thành công!");
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error: " + ex.Message);
+                        MessageBox.Show("Lỗi khi thêm khách hàng: " + ex.Message);
                     }
                 }
             }
@@ -103,7 +140,7 @@ namespace HotelManagementSystem
 
         private void ClearInputs()
         {
-            // Clear the input fields
+           
 
             name.Clear();
             cccd.Clear();
@@ -122,6 +159,11 @@ namespace HotelManagementSystem
         private void btn_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void name_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     public class Customer

@@ -32,13 +32,13 @@
             txt_Exit = new Label();
             label6 = new Label();
             groupBox1 = new GroupBox();
-            cusButton2 = new HotelManage.Assets.CusButton();
+            timkiemnhanphong = new HotelManage.Assets.CusButton();
             madatphong = new TextBox();
             label1 = new Label();
             groupBox2 = new GroupBox();
-            comboBox1 = new ComboBox();
+            phong = new ComboBox();
             label3 = new Label();
-            comboBox3 = new ComboBox();
+            loaiphonglucnhanphong = new ComboBox();
             label2 = new Label();
             groupBox4 = new GroupBox();
             gia = new TextBox();
@@ -54,13 +54,11 @@
             hovaten = new TextBox();
             label9 = new Label();
             groupBox5 = new GroupBox();
-            cusButton5 = new HotelManage.Assets.CusButton();
-            cusButton1 = new HotelManage.Assets.CusButton();
-            cusButton4 = new HotelManage.Assets.CusButton();
-            cusButton3 = new HotelManage.Assets.CusButton();
+            btn_dongnhanphong = new HotelManage.Assets.CusButton();
+            btn_nhanphong = new HotelManage.Assets.CusButton();
             groupBox3 = new GroupBox();
             dataGridView1 = new DataGridView();
-            txt_checkindetail = new HotelManage.Assets.CusButton();
+            btn_xemchitietnhanphong = new HotelManage.Assets.CusButton();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox4.SuspendLayout();
@@ -95,7 +93,7 @@
             // groupBox1
             // 
             groupBox1.BackColor = SystemColors.ButtonHighlight;
-            groupBox1.Controls.Add(cusButton2);
+            groupBox1.Controls.Add(timkiemnhanphong);
             groupBox1.Controls.Add(madatphong);
             groupBox1.Controls.Add(label1);
             groupBox1.FlatStyle = FlatStyle.Flat;
@@ -108,24 +106,24 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Tìm kiếm";
             // 
-            // cusButton2
+            // timkiemnhanphong
             // 
-            cusButton2.BackColor = SystemColors.ButtonHighlight;
-            cusButton2.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton2.BorderColor = SystemColors.HotTrack;
-            cusButton2.BorderRadius = 35;
-            cusButton2.BorderSize = 1;
-            cusButton2.FlatAppearance.BorderSize = 0;
-            cusButton2.FlatStyle = FlatStyle.Flat;
-            cusButton2.ForeColor = SystemColors.HotTrack;
-            cusButton2.Location = new Point(25, 189);
-            cusButton2.Name = "cusButton2";
-            cusButton2.Size = new Size(373, 68);
-            cusButton2.TabIndex = 30;
-            cusButton2.Text = "Tìm kiếm";
-            cusButton2.TextColor = SystemColors.HotTrack;
-            cusButton2.UseVisualStyleBackColor = false;
-            cusButton2.Click += cusButton2_Click;
+            timkiemnhanphong.BackColor = SystemColors.ButtonHighlight;
+            timkiemnhanphong.BackgroundColor = SystemColors.ButtonHighlight;
+            timkiemnhanphong.BorderColor = SystemColors.HotTrack;
+            timkiemnhanphong.BorderRadius = 35;
+            timkiemnhanphong.BorderSize = 1;
+            timkiemnhanphong.FlatAppearance.BorderSize = 0;
+            timkiemnhanphong.FlatStyle = FlatStyle.Flat;
+            timkiemnhanphong.ForeColor = SystemColors.HotTrack;
+            timkiemnhanphong.Location = new Point(25, 189);
+            timkiemnhanphong.Name = "timkiemnhanphong";
+            timkiemnhanphong.Size = new Size(373, 68);
+            timkiemnhanphong.TabIndex = 30;
+            timkiemnhanphong.Text = "Tìm kiếm";
+            timkiemnhanphong.TextColor = SystemColors.HotTrack;
+            timkiemnhanphong.UseVisualStyleBackColor = false;
+            timkiemnhanphong.Click += timkiemnhanphong_Click;
             // 
             // madatphong
             // 
@@ -147,9 +145,9 @@
             // groupBox2
             // 
             groupBox2.BackColor = SystemColors.ButtonHighlight;
-            groupBox2.Controls.Add(comboBox1);
+            groupBox2.Controls.Add(phong);
             groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(comboBox3);
+            groupBox2.Controls.Add(loaiphonglucnhanphong);
             groupBox2.Controls.Add(label2);
             groupBox2.FlatStyle = FlatStyle.Flat;
             groupBox2.Font = new Font("Segoe UI", 10.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -160,15 +158,16 @@
             groupBox2.TabIndex = 31;
             groupBox2.TabStop = false;
             groupBox2.Text = "Danh sách phòng trống";
+            groupBox2.Enter += groupBox2_Enter;
             // 
-            // comboBox1
+            // phong
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "P01", "P02", "P03", "P04" });
-            comboBox1.Location = new Point(29, 230);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(369, 48);
-            comboBox1.TabIndex = 33;
+            phong.FormattingEnabled = true;
+            phong.Location = new Point(29, 230);
+            phong.Name = "phong";
+            phong.Size = new Size(369, 48);
+            phong.TabIndex = 33;
+            phong.SelectedIndexChanged += phong_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -180,14 +179,15 @@
             label3.TabIndex = 32;
             label3.Text = "Phòng";
             // 
-            // comboBox3
+            // loaiphonglucnhanphong
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Phòng Deluxe (DLX)", "Phòng Suite (SUT)", "Phòng Superior (SUP)", "Phòng Standard (STD)" });
-            comboBox3.Location = new Point(29, 108);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(369, 48);
-            comboBox3.TabIndex = 31;
+            loaiphonglucnhanphong.FormattingEnabled = true;
+            loaiphonglucnhanphong.Items.AddRange(new object[] { "Phòng Suite (SUT)", "Phòng Deluxe (DLX)", "Phòng Superior (SUP)", "Phòng Standard (STD)" });
+            loaiphonglucnhanphong.Location = new Point(29, 108);
+            loaiphonglucnhanphong.Name = "loaiphonglucnhanphong";
+            loaiphonglucnhanphong.Size = new Size(369, 48);
+            loaiphonglucnhanphong.TabIndex = 31;
+            loaiphonglucnhanphong.SelectedIndexChanged += loaiphonglucnhanphong_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -243,8 +243,9 @@
             // 
             // ngaytra
             // 
+            ngaytra.CustomFormat = "hh:mm:ss dd/MM/yyyy";
             ngaytra.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ngaytra.Format = DateTimePickerFormat.Short;
+            ngaytra.Format = DateTimePickerFormat.Custom;
             ngaytra.Location = new Point(521, 258);
             ngaytra.Name = "ngaytra";
             ngaytra.Size = new Size(374, 43);
@@ -296,8 +297,9 @@
             // 
             // ngaynhan
             // 
+            ngaynhan.CustomFormat = "hh:mm:ss dd/MM/yyyy";
             ngaynhan.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ngaynhan.Format = DateTimePickerFormat.Short;
+            ngaynhan.Format = DateTimePickerFormat.Custom;
             ngaynhan.Location = new Point(521, 124);
             ngaynhan.Name = "ngaynhan";
             ngaynhan.Size = new Size(374, 43);
@@ -333,104 +335,67 @@
             // groupBox5
             // 
             groupBox5.BackColor = SystemColors.ButtonHighlight;
-            groupBox5.Controls.Add(cusButton5);
-            groupBox5.Controls.Add(cusButton1);
-            groupBox5.Controls.Add(cusButton4);
-            groupBox5.Controls.Add(cusButton3);
+            groupBox5.Controls.Add(btn_dongnhanphong);
+            groupBox5.Controls.Add(btn_nhanphong);
             groupBox5.FlatStyle = FlatStyle.Flat;
             groupBox5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox5.ForeColor = SystemColors.HotTrack;
             groupBox5.Location = new Point(12, 943);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(965, 371);
+            groupBox5.Size = new Size(965, 240);
             groupBox5.TabIndex = 33;
             groupBox5.TabStop = false;
             groupBox5.Text = "Chức năng";
             // 
-            // cusButton5
+            // btn_dongnhanphong
             // 
-            cusButton5.BackColor = SystemColors.ButtonHighlight;
-            cusButton5.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton5.BorderColor = SystemColors.HotTrack;
-            cusButton5.BorderRadius = 35;
-            cusButton5.BorderSize = 1;
-            cusButton5.FlatAppearance.BorderSize = 0;
-            cusButton5.FlatStyle = FlatStyle.Flat;
-            cusButton5.ForeColor = SystemColors.HotTrack;
-            cusButton5.Location = new Point(482, 85);
-            cusButton5.Name = "cusButton5";
-            cusButton5.Size = new Size(443, 87);
-            cusButton5.TabIndex = 34;
-            cusButton5.Text = "Nhận phòng";
-            cusButton5.TextColor = SystemColors.HotTrack;
-            cusButton5.UseVisualStyleBackColor = false;
+            btn_dongnhanphong.BackColor = SystemColors.ButtonHighlight;
+            btn_dongnhanphong.BackgroundColor = SystemColors.ButtonHighlight;
+            btn_dongnhanphong.BorderColor = SystemColors.HotTrack;
+            btn_dongnhanphong.BorderRadius = 35;
+            btn_dongnhanphong.BorderSize = 1;
+            btn_dongnhanphong.FlatAppearance.BorderSize = 0;
+            btn_dongnhanphong.FlatStyle = FlatStyle.Flat;
+            btn_dongnhanphong.ForeColor = SystemColors.HotTrack;
+            btn_dongnhanphong.Location = new Point(520, 99);
+            btn_dongnhanphong.Name = "btn_dongnhanphong";
+            btn_dongnhanphong.Size = new Size(376, 87);
+            btn_dongnhanphong.TabIndex = 35;
+            btn_dongnhanphong.Text = "Đóng";
+            btn_dongnhanphong.TextColor = SystemColors.HotTrack;
+            btn_dongnhanphong.UseVisualStyleBackColor = false;
+            btn_dongnhanphong.Click += btn_dongnhanphong_Click;
             // 
-            // cusButton1
+            // btn_nhanphong
             // 
-            cusButton1.BackColor = SystemColors.ButtonHighlight;
-            cusButton1.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton1.BorderColor = SystemColors.HotTrack;
-            cusButton1.BorderRadius = 35;
-            cusButton1.BorderSize = 1;
-            cusButton1.FlatAppearance.BorderSize = 0;
-            cusButton1.FlatStyle = FlatStyle.Flat;
-            cusButton1.ForeColor = SystemColors.HotTrack;
-            cusButton1.Location = new Point(6, 85);
-            cusButton1.Name = "cusButton1";
-            cusButton1.Size = new Size(443, 87);
-            cusButton1.TabIndex = 33;
-            cusButton1.Text = "Thêm khách hàng";
-            cusButton1.TextColor = SystemColors.HotTrack;
-            cusButton1.UseVisualStyleBackColor = false;
-            // 
-            // cusButton4
-            // 
-            cusButton4.BackColor = SystemColors.ButtonHighlight;
-            cusButton4.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton4.BorderColor = SystemColors.HotTrack;
-            cusButton4.BorderRadius = 35;
-            cusButton4.BorderSize = 1;
-            cusButton4.FlatAppearance.BorderSize = 0;
-            cusButton4.FlatStyle = FlatStyle.Flat;
-            cusButton4.ForeColor = SystemColors.HotTrack;
-            cusButton4.Location = new Point(6, 226);
-            cusButton4.Name = "cusButton4";
-            cusButton4.Size = new Size(443, 87);
-            cusButton4.TabIndex = 32;
-            cusButton4.Text = "Đóng";
-            cusButton4.TextColor = SystemColors.HotTrack;
-            cusButton4.UseVisualStyleBackColor = false;
-            cusButton4.Click += cusButton4_Click;
-            // 
-            // cusButton3
-            // 
-            cusButton3.BackColor = SystemColors.ButtonHighlight;
-            cusButton3.BackgroundColor = SystemColors.ButtonHighlight;
-            cusButton3.BorderColor = SystemColors.HotTrack;
-            cusButton3.BorderRadius = 35;
-            cusButton3.BorderSize = 1;
-            cusButton3.FlatAppearance.BorderSize = 0;
-            cusButton3.FlatStyle = FlatStyle.Flat;
-            cusButton3.ForeColor = SystemColors.HotTrack;
-            cusButton3.Location = new Point(482, 226);
-            cusButton3.Name = "cusButton3";
-            cusButton3.Size = new Size(443, 87);
-            cusButton3.TabIndex = 31;
-            cusButton3.Text = "Hủy";
-            cusButton3.TextColor = SystemColors.HotTrack;
-            cusButton3.UseVisualStyleBackColor = false;
+            btn_nhanphong.BackColor = SystemColors.ButtonHighlight;
+            btn_nhanphong.BackgroundColor = SystemColors.ButtonHighlight;
+            btn_nhanphong.BorderColor = SystemColors.HotTrack;
+            btn_nhanphong.BorderRadius = 35;
+            btn_nhanphong.BorderSize = 1;
+            btn_nhanphong.FlatAppearance.BorderSize = 0;
+            btn_nhanphong.FlatStyle = FlatStyle.Flat;
+            btn_nhanphong.ForeColor = SystemColors.HotTrack;
+            btn_nhanphong.Location = new Point(22, 99);
+            btn_nhanphong.Name = "btn_nhanphong";
+            btn_nhanphong.Size = new Size(376, 87);
+            btn_nhanphong.TabIndex = 34;
+            btn_nhanphong.Text = "Nhận phòng";
+            btn_nhanphong.TextColor = SystemColors.HotTrack;
+            btn_nhanphong.UseVisualStyleBackColor = false;
+            btn_nhanphong.Click += btn_nhanphong_Click;
             // 
             // groupBox3
             // 
             groupBox3.BackColor = SystemColors.ButtonHighlight;
             groupBox3.Controls.Add(dataGridView1);
-            groupBox3.Controls.Add(txt_checkindetail);
+            groupBox3.Controls.Add(btn_xemchitietnhanphong);
             groupBox3.FlatStyle = FlatStyle.Flat;
             groupBox3.Font = new Font("Segoe UI", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBox3.ForeColor = SystemColors.HotTrack;
             groupBox3.Location = new Point(1016, 101);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(1311, 1213);
+            groupBox3.Size = new Size(1311, 1082);
             groupBox3.TabIndex = 34;
             groupBox3.TabStop = false;
             groupBox3.Text = "Danh sách đặt phòng trong ngày";
@@ -455,30 +420,30 @@
             dataGridView1.TabIndex = 34;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // txt_checkindetail
+            // btn_xemchitietnhanphong
             // 
-            txt_checkindetail.BackColor = SystemColors.ButtonHighlight;
-            txt_checkindetail.BackgroundColor = SystemColors.ButtonHighlight;
-            txt_checkindetail.BorderColor = SystemColors.HotTrack;
-            txt_checkindetail.BorderRadius = 35;
-            txt_checkindetail.BorderSize = 1;
-            txt_checkindetail.FlatAppearance.BorderSize = 0;
-            txt_checkindetail.FlatStyle = FlatStyle.Flat;
-            txt_checkindetail.ForeColor = SystemColors.HotTrack;
-            txt_checkindetail.Location = new Point(766, 1068);
-            txt_checkindetail.Name = "txt_checkindetail";
-            txt_checkindetail.Size = new Size(443, 87);
-            txt_checkindetail.TabIndex = 33;
-            txt_checkindetail.Text = "Xem chi tiết";
-            txt_checkindetail.TextColor = SystemColors.HotTrack;
-            txt_checkindetail.UseVisualStyleBackColor = false;
-            txt_checkindetail.Click += txt_checkindetail_Click;
+            btn_xemchitietnhanphong.BackColor = SystemColors.ButtonHighlight;
+            btn_xemchitietnhanphong.BackgroundColor = SystemColors.ButtonHighlight;
+            btn_xemchitietnhanphong.BorderColor = SystemColors.HotTrack;
+            btn_xemchitietnhanphong.BorderRadius = 35;
+            btn_xemchitietnhanphong.BorderSize = 1;
+            btn_xemchitietnhanphong.FlatAppearance.BorderSize = 0;
+            btn_xemchitietnhanphong.FlatStyle = FlatStyle.Flat;
+            btn_xemchitietnhanphong.ForeColor = SystemColors.HotTrack;
+            btn_xemchitietnhanphong.Location = new Point(800, 924);
+            btn_xemchitietnhanphong.Name = "btn_xemchitietnhanphong";
+            btn_xemchitietnhanphong.Size = new Size(443, 87);
+            btn_xemchitietnhanphong.TabIndex = 33;
+            btn_xemchitietnhanphong.Text = "Xem chi tiết";
+            btn_xemchitietnhanphong.TextColor = SystemColors.HotTrack;
+            btn_xemchitietnhanphong.UseVisualStyleBackColor = false;
+            btn_xemchitietnhanphong.Click += btn_xemchitietnhanphong_Click;
             // 
             // Checkin
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2339, 1340);
+            ClientSize = new Size(2339, 1201);
             Controls.Add(groupBox3);
             Controls.Add(groupBox5);
             Controls.Add(groupBox4);
@@ -508,14 +473,14 @@
         private Label txt_Exit;
         private Label label6;
         private GroupBox groupBox1;
-        private HotelManage.Assets.CusButton cusButton2;
+        private HotelManage.Assets.CusButton timkiemnhanphong;
         private TextBox madatphong;
         private Label label1;
         private GroupBox groupBox2;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox phong;
         private Label label3;
-        private ComboBox comboBox3;
+        private ComboBox loaiphonglucnhanphong;
         private GroupBox groupBox4;
         private TextBox gia;
         private Label label7;
@@ -535,7 +500,9 @@
         private HotelManage.Assets.CusButton cusButton5;
         private HotelManage.Assets.CusButton cusButton1;
         private GroupBox groupBox3;
-        private HotelManage.Assets.CusButton txt_checkindetail;
+        private HotelManage.Assets.CusButton btn_xemchitietnhanphong;
         private DataGridView dataGridView1;
+        private HotelManage.Assets.CusButton btn_dongnhanphong;
+        private HotelManage.Assets.CusButton btn_nhanphong;
     }
 }
